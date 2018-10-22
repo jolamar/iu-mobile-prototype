@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Avatar = props => {
+export const Avatar = props => {
   return (
     <div className="rvt-m-avatar rvt-m-avatar--decorated rvt-m-left-auto">
       <img src={props.url} alt={props.alt} />
@@ -8,4 +8,3 @@ const Avatar = props => {
   )
 }
 
-export default Avatar;

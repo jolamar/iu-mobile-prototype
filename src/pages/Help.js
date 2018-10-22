@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 // Icons
-import IconPlus from '../icons/IconPlus';
-import IconChat from '../icons/IconChat';
-import IconPhone from '../icons/IconPhone';
-import IconEnvelope from '../icons/IconEnvelope';
-import IconMagnifyingGlass from '../icons/IconMagnifyingGlass';
+import { IconChat, IconPhone, IconEnvelope, IconMagnifyingGlass } from "../icons";
+
+
 
 export class Help extends Component {
 
@@ -16,7 +14,7 @@ export class Help extends Component {
         <div className="rvt-m-card__content rvt-m-card__content--flex rvt-p-tb-sm">
           <div className="rvt-m-action">
             <button className="rvt-m-action__icon">
-              <IconChat/>
+              { IconChat }
             </button>
             <div className="rvt-m-action__label">
               Chat
@@ -25,7 +23,7 @@ export class Help extends Component {
 
           <div className="rvt-m-action">
             <button className="rvt-m-action__icon">
-              <IconPhone/>
+              { IconPhone }
             </button>
             <div className="rvt-m-action__label">
               Phone
@@ -34,7 +32,7 @@ export class Help extends Component {
 
           <div className="rvt-m-action">
             <button className="rvt-m-action__icon">
-              <IconEnvelope/>
+              { IconEnvelope }
             </button>
             <div className="rvt-m-action__label">
               Email
@@ -54,7 +52,7 @@ export class Help extends Component {
             <div className="rvt-input-group__append">
               <button className="rvt-button">
                 <span className="rvt-sr-only">Search</span>
-                <IconMagnifyingGlass/>
+                { IconMagnifyingGlass }
               </button>
             </div>
           </div>

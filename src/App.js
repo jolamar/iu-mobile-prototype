@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import './scss/styles.scss';
 import 'rivet-uits/js/rivet.min.js';
 
-import AppHeader from './components/AppHeader';
-import Avatar from './components/Avatar';
-
-// Icons
-import IconPlus from './icons/IconPlus';
-import IconMagnifyingGlass from './icons/IconMagnifyingGlass';
-
+import { AppHeader, Avatar, Toolbar } from './components';
 
 // Pages
-import { Help } from './pages'
+import { Campus, Classes, Help, Home, Settings } from './pages'
 
 class App extends Component {
 
@@ -42,80 +36,19 @@ class App extends Component {
             </button>
           </div>
 
-          <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-          </div>
+          <Home />
 
-          <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" hidden>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-          </div>
+          <Classes />
 
-          <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-            <button className="rvt-m-card rvt-m-card--empty">
-              <div className="rvt-m-card__content">
-                <IconPlus/>
-              </div>
-            </button>
-          </div>
+          <Campus />
 
           <Help />
 
-          <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-5" aria-labelledby="t-five" hidden>
-            <div className="rvt-m-card">
-              <div className="rvt-m-card__content">
-                <div className="rvt-m-bottom-sm">Settings</div>
-              </div>
-            </div>
-          </div>
+          <Settings />
+
         </div>
 
-        <div className="rvt-m-toolbar">
-          <button
-            onClick={() => alert('hey, you clicked!')}
-            className="rvt-m-search-button"
-          >
-            <span className="rvt-sr-only">Search</span>
-            <IconMagnifyingGlass/>
-          </button>
-        </div>
+        <Toolbar />
       </React.Fragment>;
   }
 }

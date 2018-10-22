@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import IconTrident from '../icons/IconTrident';
+import { IconTrident } from '../icons';
 
-class AppHeader extends Component {
+export class AppHeader extends Component {
   render() {
     return <div className="rvt-m-header">
         <div className="rvt-m-header__title">
-          <IconTrident />
+          { IconTrident }
           <span className="rvt-ts-16">
             IU <span className="rvt-text-bold">{this.props.campus}</span>
           </span>
@@ -15,4 +15,3 @@ class AppHeader extends Component {
   }
 }
 
-export default AppHeader;
