@@ -7,7 +7,7 @@ export const Card = ({title, subtitle, details, subdetails, links}) => (
     <div className="card__detail">{ details }</div>
     <div className="rvt-m-bottom-md card__detail">{ subdetails }</div>
 
-    { links.length && links.map( link =>
+    { !!links && links.length && links.map( link =>
       <a href={link.url} className="rvt-ts-14 rvt-m-right-md card__link">{ link.title }</a>
     )}
   </div>
