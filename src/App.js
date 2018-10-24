@@ -18,7 +18,7 @@ class App extends Component {
 
         <div className="rvt-m-tabs">
           <div className="rvt-m-tabs__tablist" role="tablist" aria-label="Rivet tabs">
-            <button className="rvt-m-tabs__tab" role="tab" aria-selected="false" data-tab="tab-1" id="t-one">
+            <button className="rvt-m-tabs__tab" role="tab" aria-selected="true" data-tab="tab-1" id="t-one">
               Home
             </button>
             <button className="rvt-m-tabs__tab" role="tab" aria-selected="false" data-tab="tab-2" id="t-two" tabIndex="-1">
@@ -27,7 +27,7 @@ class App extends Component {
             <button className="rvt-m-tabs__tab" role="tab" aria-selected="false" data-tab="tab-3" id="t-three" tabIndex="-1">
               Campus
             </button>
-            <button className="rvt-m-tabs__tab" role="tab" aria-selected="true" data-tab="tab-4" id="t-four" tabIndex="-1">
+            <button className="rvt-m-tabs__tab" role="tab" aria-selected="false" data-tab="tab-4" id="t-four" tabIndex="-1">
               Help
               <span className="rvt-badge rvt-badge--success rvt-m-left-xxs">1</span>
             </button>
