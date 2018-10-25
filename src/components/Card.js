@@ -1,15 +1,24 @@
 import React from 'react'
 
-export const Card = ({title, subtitle, details, subdetails, links}) => (
+export const Card = ({banner, title, subtitle, details, subdetails, links}) => (
   <div className="rvt-panel rvt-panel--light card">
-    <div className="rvt-text-bold card__title">{ title }</div>
-    <div className="rvt-text-bold card__title">{ subtitle }</div>
-    <div className="card__detail">{ details }</div>
-    <div className="rvt-m-bottom-md card__detail">{ subdetails }</div>
+    { banner && <div className="rvt-text-bold card__banner"><img src={ banner } /></div> }
 
-    { !!links && links.length && links.map( link =>
-      <a key={link.title + link.url} href={link.url} className="rvt-ts-14 rvt-m-right-md card__link">{ link.title }</a>
-    )}
+    { title && <div className="rvt-text-bold card__title">{ title }</div> }
+
+    { subtitle && <div className="rvt-text-bold card__title">{ subtitle }</div> }
+
+    { details && <div className="card__detail">{ details }</div> }
+
+    { subdetails && <div className="card__detail">{ subdetails }</div> }
+
+    { !!links && links.length &&
+      <div className="card__links rvt-m-top-sm">
+        { links.map( link =>
+          <a key={link.title + link.url} href={link.url} className="rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>
+        )}
+      </div>
+    }
   </div>
 )
 
