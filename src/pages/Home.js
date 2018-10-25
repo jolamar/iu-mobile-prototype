@@ -16,6 +16,8 @@ export class Home extends Component {
     const afternoon = hour >= 12 && hour < 5
     const evening = hour >= 5 && hour < 4
 
+    console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
+
     return <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
       {/* Morning time (4am - 12pm) */}
