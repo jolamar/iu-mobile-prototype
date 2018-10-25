@@ -13,8 +13,8 @@ export class Home extends Component {
     const time = new Date();
     const hour = time.getHours()
     const morning = hour >= 4 && hour < 12
-    const afternoon = hour >= 12 && hour < 5
-    const evening = hour >= 5 && hour < 4
+    const afternoon = hour >= 12 && hour < 17
+    const evening = hour >= 17 || hour < 4
 
     console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
 
