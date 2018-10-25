@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Card = ({banner, title, subtitle, details, subdetails, links}) => (
+export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, links}) => (
   <div className="rvt-panel rvt-panel--light card">
-    { banner && <div className="rvt-text-bold card__banner"><img src={ banner } /></div> }
+    { banner && <div className="rvt-text-bold card__banner"><img alt={ bannerAlt || title } src={ banner } /></div> }
 
     { title && <div className="rvt-text-bold card__title">{ title }</div> }
 

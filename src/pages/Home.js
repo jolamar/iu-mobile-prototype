@@ -17,7 +17,7 @@ export class Home extends Component {
     const evening = hour >= 17 || hour < 4
     console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
 
-    return <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
       {/* Morning time (4am - 12pm) */}
 
@@ -158,6 +158,7 @@ export class Home extends Component {
         <button className="rvt-button rvt-button--plain">View all events</button>
 
         <Card banner     = { "/img/stadium.jpg" }
+              bannerAlt  = { "Drone photo of the IU stadium full of fans at a football game." }
               title      = { "Football: Indiana vs. Purdue" }
               details    = { "7:00 PM" }
               subdetails = { "Memorial Stadium" }

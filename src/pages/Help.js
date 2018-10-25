@@ -8,7 +8,7 @@ import { IconChat, IconPhone, IconEnvelope, IconMagnifyingGlass } from "../icons
 export class Help extends Component {
 
   render() {
-    return <div className="rvt-m-tabs__panel" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four" hidden>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four" hidden>
       <div className="rvt-m-card">
         <div className="rvt-ts-14 rvt-m-bottom-sm">Contact us</div>
         <div className="rvt-m-card__content rvt-m-card__content--flex rvt-p-tb-sm">
