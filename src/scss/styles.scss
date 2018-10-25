@@ -111,6 +111,7 @@ html {
   &__panel {
     padding: $padding-base;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     &:focus {
       outline: none;

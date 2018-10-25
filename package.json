@@ -9,7 +9,7 @@
     "react-scripts": "2.0.4",
     "rivet-uits": "^1.1.0"
   },
-  "homepage": "https://pages.github.iu.edu/uxo/mobile-prototype",
+  "homepage": "https://jolamar.github.io/iu-mobile-prototype",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
