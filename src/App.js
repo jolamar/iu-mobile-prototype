@@ -13,7 +13,7 @@ class App extends Component {
     return <React.Fragment>
 
         <AppHeader campus="Bloomington">
-          <Avatar url="http://www.fillmurray.com/g/150/150" alt="Your pretty face..." />
+          <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray" />
         </AppHeader>
 
         <div className="rvt-m-tabs">
