@@ -23,9 +23,8 @@ export class Home extends Component {
 
       { morning &&
       <React.Fragment>
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-bottom-md">Good morning, { firstName }.<br />
-          You have 2 classes today.
-        </h2>
+        <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
+        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
 
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
@@ -91,9 +90,8 @@ export class Home extends Component {
 
       { afternoon &&
       <React.Fragment>
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-bottom-md">Good afternoon, { firstName }.<br />
-          You have just 1 more class today.
-        </h2>
+        <h2 className="rvt-ts-23 rvt-text-bold">Good afternoon, { firstName }.</h2>
+        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have just 1 more class today.</p>
 
         <Card title      = { "BUS-X 400" }
               subtitle   = { "International Business Law" }
@@ -149,9 +147,9 @@ export class Home extends Component {
 
       { evening &&
       <React.Fragment>
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-bottom-md">Good evening, { firstName }.<br />
-          Looking for things to do?
-        </h2>
+        <h2 className="rvt-ts-23 rvt-text-bold">Good evening, { firstName }.</h2>
+        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">Looking for things to do?</p>
+
 
         <button className="rvt-button rvt-button--plain">View all events</button>
 
