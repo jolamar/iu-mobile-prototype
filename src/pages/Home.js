@@ -157,7 +157,7 @@ export class Home extends Component {
 
         <button className="rvt-button rvt-button--plain">View all events</button>
 
-        <Card banner     = { "/img/stadium.jpg" }
+        <Card banner     = { "./img/stadium.jpg" }
               bannerAlt  = { "Drone photo of the IU stadium full of fans at a football game." }
               title      = { "Football: Indiana vs. Purdue" }
               details    = { "7:00 PM" }
