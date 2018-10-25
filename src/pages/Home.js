@@ -47,7 +47,7 @@ export class Home extends Component {
           />
         </div>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab breakfast</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
         <div className="scrollable">
           <Card title      = { "Gresham Food Court" }
@@ -67,7 +67,7 @@ export class Home extends Component {
           />
         </div>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting to class</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
 
         <Card title      = { "Going to Kelley School" }
@@ -105,7 +105,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab lunch</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
 
         <div className="scrollable">
 
@@ -127,7 +127,7 @@ export class Home extends Component {
 
         </div>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting to class</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
 
         <Card title      = { "Going to Kelley School" }
@@ -167,7 +167,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab dinner</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
 
         <div className="scrollable">
           <Card title      = { "Gresham Food Court" }
@@ -187,7 +187,7 @@ export class Home extends Component {
           />
         </div>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting home</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
 
 
         <Card title      = { "Going to Stadium" }
@@ -200,7 +200,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Tomorrow's classes</h2>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Tomorrow's classes</h2>
 
         <Card title      = { "INFO-I 222" }
               subtitle   = { "The Information Society" }
