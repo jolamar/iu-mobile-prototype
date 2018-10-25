@@ -25,46 +25,47 @@ export class Home extends Component {
       <React.Fragment>
         <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
+        <div className="scrollable">
+          <Card title      = { "BUS-L 201" }
+                subtitle   = { "Legal Environments of Business" }
+                details    = { "5:30 PM - 6:45 PM" }
+                subdetails = { "Hodge Hall 1000" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Assignments',   url: '#' }
+                ]}
+          />
 
-        <Card title      = { "BUS-L 201" }
-              subtitle   = { "Legal Environments of Business" }
-              details    = { "5:30 PM - 6:45 PM" }
-              subdetails = { "Hodge Hall 1000" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Assignments',   url: '#' }
-              ]}
-        />
-
-        <Card title      = { "BUS-E 125" }
-              subtitle   = { "Intro to Ethics in Business" }
-              details    = { "7:00 PM - 7:45 PM" }
-              subdetails = { "Simon Hall 010" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Assignments',   url: '#' }
-              ]}
-        />
-
+          <Card title      = { "BUS-E 125" }
+                subtitle   = { "Intro to Ethics in Business" }
+                details    = { "7:00 PM - 7:45 PM" }
+                subdetails = { "Simon Hall 010" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Assignments',   url: '#' }
+                ]}
+          />
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab breakfast</h2>
 
+        <div className="scrollable">
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
 
-        <Card title      = { "Gresham Food Court" }
-              details    = { "Open now: 7:00 AM - 2:00 AM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-
-        <Card title      = { "McNutt Food Court" }
-              details    = { "Open now: 9:00 AM - 8:00 PM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
+          <Card title      = { "McNutt Food Court" }
+                details    = { "Open now: 9:00 AM - 8:00 PM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting to class</h2>
 
@@ -106,22 +107,25 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab lunch</h2>
 
+        <div className="scrollable">
 
-        <Card title      = { "Gresham Food Court" }
-              details    = { "Open now: 7:00 AM - 2:00 AM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
 
-        <Card title      = { "McNutt Food Court" }
-              details    = { "Open now: 9:00 AM - 8:00 PM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
+          <Card title      = { "McNutt Food Court" }
+                details    = { "Open now: 9:00 AM - 8:00 PM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting to class</h2>
 
@@ -165,22 +169,23 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Grab dinner</h2>
 
+        <div className="scrollable">
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
 
-        <Card title      = { "Gresham Food Court" }
-              details    = { "Open now: 7:00 AM - 2:00 AM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-
-        <Card title      = { "McNutt Food Court" }
-              details    = { "Open now: 9:00 AM - 8:00 PM" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Details',   url: '#' }
-              ]}
-        />
+          <Card title      = { "McNutt Food Court" }
+                details    = { "Open now: 9:00 AM - 8:00 PM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg rvt-m-bottom-md">Getting home</h2>
 

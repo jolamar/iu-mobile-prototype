@@ -1,0 +1,28 @@
+.scrollable {
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+
+    .card {
+        margin-right: 1em;
+        min-width: 300px;
+    }
+
+    .card:last-child {
+        position: relative;
+
+        &:after {
+            content: " ";
+            display: block;
+            background: green;
+            height: 1px;
+            width: 1px;
+            position: absolute;
+            right: -24px;
+        }
+    }
+}
