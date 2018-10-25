@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/iu-mobile-prototype/static/js/runtime~main.668c0bb0.js"
   },
   {
-    "revision": "a4adc6e5b2d5e670f040",
-    "url": "/iu-mobile-prototype/static/js/main.a4adc6e5.chunk.js"
+    "revision": "ec7de38544997942373c",
+    "url": "/iu-mobile-prototype/static/js/main.ec7de385.chunk.js"
   },
   {
     "revision": "92dff8a5129dff61c2a8",
     "url": "/iu-mobile-prototype/static/js/1.92dff8a5.chunk.js"
   },
   {
-    "revision": "a4adc6e5b2d5e670f040",
-    "url": "/iu-mobile-prototype/static/css/main.4286b628.chunk.css"
+    "revision": "ec7de38544997942373c",
+    "url": "/iu-mobile-prototype/static/css/main.8400ff15.chunk.css"
   },
   {
-    "revision": "b8a3039ccc8618c57d201f2951c92eb6",
+    "revision": "219f3fb449617844cf7f2f3871b7a4a4",
     "url": "/iu-mobile-prototype/index.html"
   }
 ];
