@@ -81,6 +81,13 @@ html {
     background-color: #ffffff;
   }
 
+  a {
+    color: initial;
+    text-decoration: none;
+    text-align: center;
+  }
+
+
   &__tab {
     flex-grow: 1;
 
