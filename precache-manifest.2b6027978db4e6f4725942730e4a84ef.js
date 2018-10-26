@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/iu-mobile-prototype/static/css/main.337237ea.chunk.css"
   },
   {
-    "revision": "f546b01db8f36d4840d1227c1a58e4b9",
+    "revision": "8f641f407387e24a46bf9f62f517db13",
     "url": "/iu-mobile-prototype/index.html"
   }
 ];
