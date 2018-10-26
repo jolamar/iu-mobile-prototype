@@ -9,8 +9,9 @@ export class Help extends Component {
 
   render() {
     const path = window.location.pathname
+    const basepath = '/iu-mobile-prototype'
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four" hidden={path !== '/help'}>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four" hidden={path !== basepath + '/help'}>
       <div className="rvt-m-card">
         <div className="rvt-ts-14 rvt-m-bottom-sm">Contact us</div>
         <div className="rvt-m-card__content rvt-m-card__content--flex rvt-p-tb-sm">

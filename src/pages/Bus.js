@@ -6,8 +6,9 @@ export class Bus extends Component {
 
   render() {
     const path = window.location.pathname
+    const basepath = '/iu-mobile-prototype'
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== basepath + '/bus'}>
 
       <div className="rvt-grid">
         <div className="rvt-grid__item">

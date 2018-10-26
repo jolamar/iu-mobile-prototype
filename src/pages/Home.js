@@ -7,6 +7,7 @@ export class Home extends Component {
   render() {
     // Path
     const path = window.location.pathname
+    const basepath = '/iu-mobile-prototype'
 
     // Name
     const firstName = 'Dwight'
@@ -19,7 +20,7 @@ export class Home extends Component {
     const evening = hour >= 17 || hour < 4
     console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== '/'}>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
 
       {/* Morning time (4am - 12pm) */}
 

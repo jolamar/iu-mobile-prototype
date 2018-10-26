@@ -15,8 +15,9 @@ class App extends Component {
 
   render() {
     const path = window.location.pathname
+    const basepath = '/iu-mobile-prototype'
 
-    return <Router>
+    return <Router basename={basepath}>
 
       <React.Fragment>
 
@@ -27,11 +28,11 @@ class App extends Component {
 
         <div className="rvt-m-tabs">
           <div className="rvt-m-tabs__tablist" role="tablist" aria-label="Rivet tabs">
-            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === '/'} data-tab="tab-1" id="t-one" tabIndex="-1" to="/">Home</Link>
-            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === '/classes'} data-tab="tab-2" id="t-two" tabIndex="-1" to="/classes">Classes</Link>
-            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === '/campus'} data-tab="tab-3" id="t-three" tabIndex="-1" to="/campus">Campus</Link>
-            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === '/help'} data-tab="tab-4" id="t-four" tabIndex="-1" to="/help">Help</Link>
-            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === '/settings'} data-tab="tab-5" id="t-five" tabIndex="-1" to="/settings">Settings</Link>
+            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === basepath + '/'} data-tab="tab-1" id="t-one" tabIndex="-1" to="/">Home</Link>
+            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === basepath + '/classes'} data-tab="tab-2" id="t-two" tabIndex="-1" to="/classes">Classes</Link>
+            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === basepath + '/campus'} data-tab="tab-3" id="t-three" tabIndex="-1" to="/campus">Campus</Link>
+            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === basepath + '/help'} data-tab="tab-4" id="t-four" tabIndex="-1" to="/help">Help</Link>
+            <Link className="rvt-m-tabs__tab" role="tab" aria-selected={path === basepath + '/settings'} data-tab="tab-5" id="t-five" tabIndex="-1" to="/settings">Settings</Link>
           </div>
 
           <Home />

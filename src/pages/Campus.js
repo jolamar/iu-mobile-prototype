@@ -6,7 +6,9 @@ export class Campus extends Component {
 
   render() {
     const path = window.location.pathname
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== '/campus'}>
+    const basepath = '/iu-mobile-prototype'
+
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== basepath + '/campus'}>
         <div className="rvt-grid">
           <div className="rvt-grid__item">
             <Card details={ "Bus Status" }
