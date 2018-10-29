@@ -5,7 +5,7 @@ import 'rivet-uits/js/rivet.min.js';
 import { AppHeader, Avatar, Toolbar } from './components';
 
 // Pages
-import { Campus, Classes, Help, Home, Settings } from './pages'
+import { Bus, Campus, Classes, Help, Home, Labs, Settings } from './pages'
 
 // Routing
 import { BrowserRouter as Router, Link } from "react-router-dom";
@@ -40,6 +40,8 @@ class App extends Component {
           <Classes />
 
           <Campus />
+            <Bus />
+            <Labs />
 
           <Help />
 
