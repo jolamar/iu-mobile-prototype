@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { Card } from "../components";
 
+import { Link } from "react-router-dom";
+
+
 export class Campus extends Component {
 
   render() {
@@ -34,7 +37,9 @@ export class Campus extends Component {
             <Card details={ "Parking" }/>
           </div>
           <div className="rvt-grid__item">
-            <Card details={ "Labs & Printers" }/>
+            <Link to="/labs">
+              <Card details={ "Labs & Printers" } />
+            </Link>
           </div>
         </div>
     </div>;
