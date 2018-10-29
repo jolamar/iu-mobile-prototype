@@ -7,7 +7,7 @@ export class Home extends Component {
   render() {
     // Path
     const path = window.location.pathname
-    const basepath = '/iu-mobile-prototype'
+    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
     // Name
     const firstName = 'Dwight'

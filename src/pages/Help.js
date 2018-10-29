@@ -9,7 +9,7 @@ export class Help extends Component {
 
   render() {
     const path = window.location.pathname
-    const basepath = '/iu-mobile-prototype'
+    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four" hidden={path !== basepath + '/help'}>
       <div className="rvt-m-card">

@@ -8,14 +8,14 @@ import { AppHeader, Avatar, Toolbar } from './components';
 import { Campus, Classes, Help, Home, Settings } from './pages'
 
 // Routing
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 class App extends Component {
 
   render() {
     const path = window.location.pathname
-    const basepath = '/iu-mobile-prototype'
+    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
     return <Router basename={basepath}>
 
