@@ -13,35 +13,52 @@ export class Labs extends Component {
     
      <h2 className="rvt-ts-23 rvt-text-bold">Nearest labs</h2>
 
-      <div className="rvt-grid">
-        <div className="rvt-grid__item">
-          <Card details={ "Bus Status" }
-                link={ "/" }
-          />
-        </div>
-        <div className="rvt-grid__item">
-          <Card details={ "Locations" }/>
-        </div>
-      </div>
+      <Card title      = { "Hodge Hall 1047" }
+                details   = { 
+                  <div><span className="rvt-alert--success">7 seats available</span></div>
+                }
+                links      = {[
+                  { title: 'Details', url: '#' },
+                ]}
+      />
 
-      <div className="rvt-grid">
-        <div className="rvt-grid__item">
-          <Card details={ "Crimson Card" }/>
-        </div>
-        <div className="rvt-grid__item">
-          <Card details={ "Find Food" }/>
-        </div>
-      </div>
+      <Card title      = { "Hodge Hall 4055" }
+                details   = { 
+                  <div><span className="rvt-alert--danger">Full</span></div>
+                }
+                links      = {[
+                  { title: 'Details', url: '#' },
+                ]}
+      />
 
-      <div className="rvt-grid">
-        <div className="rvt-grid__item">
-          <Card details={ "Parking" }/>
-        </div>
-        <div className="rvt-grid__item">
-          <Card details={ "Labs & Printers" }/>
-        </div>
-      </div>
+      <Card title      = { "Hodge Hall 4057" }
+                details   = { 
+                  <div><span className="rvt-alert--danger">Class in progress</span></div>
+                }
+                links      = {[
+                  { title: 'Details', url: '#' },
+                ]}
+      />
 
+      <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-btm-md">Nearest printers</h2>
+
+      <Card title      = { "Hodge Hall" }
+                details   = { 
+                  <div><span className="rvt-alert--success">11 printers available</span></div>
+                }
+                links      = {[
+                  { title: 'Details', url: '#' },
+                ]}
+      />
+
+      <Card title      = { "SPEA" }
+                details   = { 
+                  <div><span className="rvt-alert--success">11 printers available</span></div>
+                }
+                links      = {[
+                  { title: 'Details', url: '#' },
+                ]}
+      />
 
     </div>;
   }
