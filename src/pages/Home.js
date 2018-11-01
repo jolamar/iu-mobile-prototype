@@ -6,6 +6,24 @@ import Slider from "react-slick";
 
 export class Home extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      scrollY: 'scroll'
+    }
+    this.disableScrollY = this.disableScrollY.bind(this)
+    this.enableScrollY = this.enableScrollY.bind(this)
+  }
+
+  disableScrollY() {
+    this.setState({scrollY: '-webkit-paged-x'})
+  }
+
+  enableScrollY() {
+    this.setState({scrollY: 'scroll'})
+  }
+
   render() {
     // Path
     const path = window.location.pathname
@@ -30,7 +48,7 @@ export class Home extends Component {
       slidesToScroll: 1
     };
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
+    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
 
       {/* Morning time (4am - 12pm) */}
 
@@ -121,23 +139,25 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
 
-        <Slider {...settings}>
-          <Card title      = { "Gresham Food Court" }
-                details    = { "Open now: 7:00 AM - 2:00 AM" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Details',   url: '#' }
-                ]}
-          />
+        <div onTouchStart={()=>this.disableScrollY()} onTouchEnd={()=>this.enableScrollY()}>
+          <Slider {...settings}>
+            <Card title      = { "Gresham Food Court" }
+                  details    = { "Open now: 7:00 AM - 2:00 AM" }
+                  links      = {[
+                    { title: 'Getting there', url: '#' },
+                    { title: 'Details',   url: '#' }
+                  ]}
+            />
 
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Details',   url: '#' }
-                ]}
-          />
-        </Slider>
+            <Card title      = { "McNutt Food Court" }
+                  details    = { "Open now: 9:00 AM - 8:00 PM" }
+                  links      = {[
+                    { title: 'Getting there', url: '#' },
+                    { title: 'Details',   url: '#' }
+                  ]}
+            />
+          </Slider>
+        </div>
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
