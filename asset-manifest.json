@@ -1,13 +1,15 @@
 {
-  "main.css": "/iu-mobile-prototype/static/css/main.df0082bb.chunk.css",
-  "main.js": "/iu-mobile-prototype/static/js/main.e8e50c6c.chunk.js",
-  "main.js.map": "/iu-mobile-prototype/static/js/main.e8e50c6c.chunk.js.map",
-  "static/js/1.3f0761ec.chunk.js": "/iu-mobile-prototype/static/js/1.3f0761ec.chunk.js",
-  "static/js/1.3f0761ec.chunk.js.map": "/iu-mobile-prototype/static/js/1.3f0761ec.chunk.js.map",
+  "main.css": "/iu-mobile-prototype/static/css/main.0ac5b124.chunk.css",
+  "main.js": "/iu-mobile-prototype/static/js/main.a881589d.chunk.js",
+  "main.js.map": "/iu-mobile-prototype/static/js/main.a881589d.chunk.js.map",
+  "static/css/1.dc81f9e0.chunk.css": "/iu-mobile-prototype/static/css/1.dc81f9e0.chunk.css",
+  "static/js/1.49950b65.chunk.js": "/iu-mobile-prototype/static/js/1.49950b65.chunk.js",
+  "static/js/1.49950b65.chunk.js.map": "/iu-mobile-prototype/static/js/1.49950b65.chunk.js.map",
   "runtime~main.js": "/iu-mobile-prototype/static/js/runtime~main.668c0bb0.js",
   "runtime~main.js.map": "/iu-mobile-prototype/static/js/runtime~main.668c0bb0.js.map",
-  "static/css/main.df0082bb.chunk.css.map": "/iu-mobile-prototype/static/css/main.df0082bb.chunk.css.map",
+  "static/css/main.0ac5b124.chunk.css.map": "/iu-mobile-prototype/static/css/main.0ac5b124.chunk.css.map",
+  "static/css/1.dc81f9e0.chunk.css.map": "/iu-mobile-prototype/static/css/1.dc81f9e0.chunk.css.map",
   "index.html": "/iu-mobile-prototype/index.html",
-  "precache-manifest.a8d807e75faf890c4583eedef853cc0b.js": "/iu-mobile-prototype/precache-manifest.a8d807e75faf890c4583eedef853cc0b.js",
+  "precache-manifest.169747b850889a55044d210e0a836e96.js": "/iu-mobile-prototype/precache-manifest.169747b850889a55044d210e0a836e96.js",
   "service-worker.js": "/iu-mobile-prototype/service-worker.js"
 }
