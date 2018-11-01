@@ -68,6 +68,14 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+
+        </div>
+
+        <div className="rvt-m-top-md dots dots-scaleup">
+          <ul>
+            <li className="current"><a href="#">Gresham</a></li>
+            <li className=""><a href="#">McNutt</a></li>
+          </ul>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
@@ -127,7 +135,12 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
+        </div>
+        <div className="rvt-m-top-md dots dots-scaleup">
+          <ul>
+            <li className="current"><a href="#">Gresham</a></li>
+            <li className=""><a href="#">McNutt</a></li>
+          </ul>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
