@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Card } from "../components";
 
+import Slider from "react-slick";
+
 export class Home extends Component {
 
   render() {
@@ -18,7 +20,15 @@ export class Home extends Component {
     const morning = hour >= 4 && hour < 12
     const afternoon = hour >= 12 && hour < 17
     const evening = hour >= 17 || hour < 4
-    console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
+
+    // Slider settings
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
 
@@ -71,13 +81,6 @@ export class Home extends Component {
 
         </div>
 
-        <div className="rvt-m-top-md dots dots-scaleup">
-          <ul>
-            <li className="current"><a href="#">Gresham</a></li>
-            <li className=""><a href="#">McNutt</a></li>
-          </ul>
-        </div>
-
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
 
@@ -118,8 +121,7 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
 
-        <div className="scrollable">
-
+        <Slider {...settings}>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -135,13 +137,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </div>
-        <div className="rvt-m-top-md dots dots-scaleup">
-          <ul>
-            <li className="current"><a href="#">Gresham</a></li>
-            <li className=""><a href="#">McNutt</a></li>
-          </ul>
-        </div>
+        </Slider>
+
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
