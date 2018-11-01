@@ -10,18 +10,84 @@ export class Home extends Component {
     super(props)
 
     this.state = {
-      scrollY: 'scroll'
+      scrollY: 'scroll',
+      distY: 0,
+      distX: 0,
+      startY: 0,
+      startX: 0,
+      touchStart: new Date().getTime(),
+      isHorizontalSwipe: false,
+      isVerticalSwipe: false
     }
+    this.handleTouchStart = this.handleTouchStart.bind(this)
+    this.handleTouchMove = this.handleTouchMove.bind(this)
+    this.handleTouchEnd = this.handleTouchEnd.bind(this)
     this.disableScrollY = this.disableScrollY.bind(this)
     this.enableScrollY = this.enableScrollY.bind(this)
   }
 
   disableScrollY() {
-    this.setState({scrollY: '-webkit-paged-x'})
+    this.setState({
+      scrollY: '-webkit-paged-x'
+    })
   }
 
   enableScrollY() {
-    this.setState({scrollY: 'scroll'})
+    this.setState({
+      scrollY: 'scroll'
+    })
+  }
+
+
+  handleTouchStart(e) {
+    e.preventDefault()
+    let touchobj = e.changedTouches[0]
+
+    this.setState({
+      startY: touchobj.pageY,
+      startX: touchobj.pageX,
+      touchStart: new Date().getTime(),
+      distX: 0,
+      distY: 0,
+      isHorizontalSwipe: false,
+      isVerticalSwipe: false
+    })
+
+
+  }
+
+  handleTouchEnd(e) {
+
+    let touchobj = e.changedTouches[0]
+
+    let elapsedTime = new Date().getTime() - this.state.touchStart // get time elapsed
+
+    let distY = Math.abs(touchobj.pageY - this.state.startY)
+    let distX = Math.abs(touchobj.pageX - this.state.startX)
+
+    let isHorizontalSwipe = (distX >= 50 && distY <= 100)
+    let isVerticalSwipe = (distY >= 50 && distX <= 100)
+
+    this.setState({
+      isHorizontalSwipe,
+      isVerticalSwipe,
+      distY,
+      distX
+    })
+
+    if(isHorizontalSwipe) {
+      this.disableScrollY()
+    }
+
+    setTimeout(function() {
+      this.enableScrollY()
+    }.bind(this), 500)
+
+    e.preventDefault()
+  }
+
+  handleTouchMove(e) {
+    e.preventDefault()
   }
 
   render() {
@@ -137,9 +203,12 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
-
-        <div onTouchStart={()=>this.disableScrollY()} onTouchEnd={()=>this.enableScrollY()}>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch Swipe:</h2>
+        <p>Horizontal swipe: {this.state.isHorizontalSwipe + ""}<br />
+          Vertical swipe: {this.state.isVerticalSwipe + ""}<br />
+          Scrolling: {this.state.scrollY === 'scroll' ? 'enabled' : 'disabled' }<br />
+          </p>
+        <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
           <Slider {...settings}>
             <Card title      = { "Gresham Food Court" }
                   details    = { "Open now: 7:00 AM - 2:00 AM" }
