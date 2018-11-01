@@ -19,7 +19,7 @@
 
 .slick-dots {
   position: relative;
-  display: table;
+  display: table !important;
   margin: 1em auto 0;
   padding: 0;
   list-style: none;
