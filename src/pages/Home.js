@@ -130,12 +130,10 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch Swipe:</h2>
-        <p>Horizontal swipe: {this.state.isHorizontalSwipe + ""}<br />
-          Vertical swipe: {this.state.isVerticalSwipe + ""}<br />
-          Scrolling: {this.state.scrollY === 'scroll' ? 'enabled' : 'disabled' }<br />
-          </p>
-        <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
+        <div className="card-stack">
+          <div className="card"></div>
+          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -143,15 +141,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Details',   url: '#' }
-                ]}
-          />
-        </Scroller>
+          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+        </div>
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>

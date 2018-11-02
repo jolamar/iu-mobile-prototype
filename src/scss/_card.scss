@@ -16,3 +16,32 @@
     }
   }
 }
+
+.card-stack {
+  margin-top: 1em;
+  .card {
+    box-shadow: 0 0 10px #ddd;
+    margin-top: 0;
+
+    &:first-child,
+    &:nth-child(2) {
+      height: 12px;
+      border-radius: 5px 5px 0 0;
+      padding: 0;
+      box-shadow: none;
+      border: none
+    }
+
+    &:first-child {
+      margin: 0 20px;
+      background: rgba(255,255,255,.4);
+      box-shadow: 0 0 3px #eaeaea;
+    }
+
+    &:nth-child(2) {
+      margin: 0 10px;
+      background: rgba(255,255,255,1);
+      box-shadow: 0 0 7px #e5e5e5;
+    }
+  }
+}
