@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
 
-import { Card } from "../components";
+import { Card, Scroller } from "../components";
 
 export class Classes extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      scrollY: 'scroll'
+    }
+
+    this.disableScrollY = this.disableScrollY.bind(this)
+    this.enableScrollY = this.enableScrollY.bind(this)
+  }
+
+  disableScrollY() {
+    this.setState({
+      scrollY: '-webkit-paged-x'
+    })
+  }
+
+  enableScrollY() {
+    this.setState({
+      scrollY: 'scroll'
+    })
+  }
 
   render() {
     const path = window.location.pathname
     const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" hidden={path !== basepath + '/classes'}>
+    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" hidden={path !== basepath + '/classes'}>
       <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
 
-      <div className="scrollable">
+      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
               details    = { "5:30 PM - 6:45 PM" }
@@ -31,10 +53,11 @@ export class Classes extends Component {
                 { title: 'Assignments',   url: '#' }
               ]}
         />
-      </div>
+      </Scroller>
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Assignments due today</h2>
-      <div className="scrollable">
+      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+
         <Card title      = { "Quiz 7" }
               details    = { "ECON-E 202" }
               subdetails = { "Today at 11:59 PM" }
@@ -50,11 +73,12 @@ export class Classes extends Component {
                 { title: 'Details',   url: '#' }
               ]}
         />
-      </div>
+      </Scroller>
 
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Other assignments</h2>
-      <div className="scrollable">
+      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+
         <Card title      = { "Q&A 6" }
               details    = { "ECON-E 202" }
               subdetails = { "Tomorrow at 11:59 PM" }
@@ -70,7 +94,7 @@ export class Classes extends Component {
                 { title: 'Details',   url: '#' }
               ]}
         />
-      </div>
+      </Scroller>
     </div>;
   }
 }
