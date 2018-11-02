@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Card, Scroller } from "../components";
+import { Card } from "../components";
 
 export class Home extends Component {
 
@@ -50,7 +50,9 @@ export class Home extends Component {
       <React.Fragment>
         <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
-        <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+        <div className="card-stack">
+          <div className="card"></div>
+          <div className="card"></div>
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
                 details    = { "5:30 PM - 6:45 PM" }
@@ -60,21 +62,14 @@ export class Home extends Component {
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "BUS-E 125" }
-                subtitle   = { "Intro to Ethics in Business" }
-                details    = { "7:00 PM - 7:45 PM" }
-                subdetails = { "Simon Hall 010" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Assignments',   url: '#' }
-                ]}
-          />
-        </Scroller>
+          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
-        <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+        <div className="card-stack">
+          <div className="card"></div>
+          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -82,15 +77,10 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+        </div>
 
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Details',   url: '#' }
-                ]}
-          />
-        </Scroller>
+
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
@@ -188,7 +178,9 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
-        <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+        <div className="card-stack">
+          <div className="card"></div>
+          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -196,15 +188,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Details',   url: '#' }
-                ]}
-          />
-        </Scroller>
+          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
 

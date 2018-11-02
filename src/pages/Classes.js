@@ -33,7 +33,9 @@ export class Classes extends Component {
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" >
       <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
 
-      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
+      <div className="card-stack">
+        <div className="card"></div>
+        <div className="card"></div>
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
               details    = { "5:30 PM - 6:45 PM" }
@@ -44,28 +46,13 @@ export class Classes extends Component {
               ]}
         />
 
-        <Card title      = { "BUS-E 125" }
-              subtitle   = { "Intro to Ethics in Business" }
-              details    = { "7:00 PM - 7:45 PM" }
-              subdetails = { "Simon Hall 010" }
-              links      = {[
-                { title: 'Getting there', url: '#' },
-                { title: 'Assignments',   url: '#' }
-              ]}
-        />
-      </Scroller>
+        <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+      </div>
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Assignments due today</h2>
-      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
-
-        <Card title      = { "Quiz 7" }
-              details    = { "ECON-E 202" }
-              subdetails = { "Today at 11:59 PM" }
-              links      = {[
-                { title: 'Details', url: '#' }
-              ]}
-        />
-
+      <div className="card-stack">
+        <div className="card"></div>
+        <div className="card"></div>
         <Card title      = { "Ch 9 HW" }
               details    = { "STAT-S 301" }
               subdetails = { "Today at 11:59 PM" }
@@ -73,12 +60,18 @@ export class Classes extends Component {
                 { title: 'Details',   url: '#' }
               ]}
         />
-      </Scroller>
+
+        <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+      </div>
+
+
+
 
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Other assignments</h2>
-      <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
-
+      <div className="card-stack">
+        <div className="card"></div>
+        <div className="card"></div>
         <Card title      = { "Q&A 6" }
               details    = { "ECON-E 202" }
               subdetails = { "Tomorrow at 11:59 PM" }
@@ -87,14 +80,11 @@ export class Classes extends Component {
               ]}
         />
 
-        <Card title      = { "Ch 10 HW" }
-              details    = { "STAT-S 301" }
-              subdetails = { "Tomorrow at 11:59 PM" }
-              links      = {[
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-      </Scroller>
+        <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
+      </div>
+
+
+
     </div>;
   }
 }
