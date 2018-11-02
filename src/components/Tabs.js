@@ -141,7 +141,7 @@ class Tabs extends Component {
             <Link onClick={()=>this.goToPage(4)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 4} to="/settings">Settings</Link>
           </div>
 
-          <div ref={(ref) => this.panel = ref} class="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+          <div ref={(ref) => this.panel = ref} className="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
             <Slider ref={slider => (this.slider = slider)} beforeChange={this.setCurrentPage} {...settings}>
               <Home />
               <Classes />
