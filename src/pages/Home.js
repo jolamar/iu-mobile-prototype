@@ -60,8 +60,6 @@ export class Home extends Component {
 
     let touchobj = e.changedTouches[0]
 
-    let elapsedTime = new Date().getTime() - this.state.touchStart // get time elapsed
-
     let distY = Math.abs(touchobj.pageY - this.state.startY)
     let distX = Math.abs(touchobj.pageX - this.state.startX)
 
@@ -105,7 +103,7 @@ export class Home extends Component {
     const afternoon = hour >= 12 && hour < 17
     const evening = hour >= 17 || hour < 4
 
-    // Slider settings
+    // Scroller settings
     const settings = {
       dots: true,
       infinite: true,
@@ -113,6 +111,8 @@ export class Home extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+
+    const Scroller = Slider
 
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
 
@@ -122,7 +122,8 @@ export class Home extends Component {
       <React.Fragment>
         <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
-        <div className="scrollable">
+        <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+          <Scroller {...settings}>
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
                 details    = { "5:30 PM - 6:45 PM" }
@@ -142,11 +143,13 @@ export class Home extends Component {
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
+          </Scroller>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
-        <div className="scrollable">
+        <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+          <Scroller {...settings}>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -162,7 +165,7 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
+          </Scroller>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
@@ -209,7 +212,7 @@ export class Home extends Component {
           Scrolling: {this.state.scrollY === 'scroll' ? 'enabled' : 'disabled' }<br />
           </p>
         <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
-          <Slider {...settings}>
+          <Scroller {...settings}>
             <Card title      = { "Gresham Food Court" }
                   details    = { "Open now: 7:00 AM - 2:00 AM" }
                   links      = {[
@@ -225,7 +228,7 @@ export class Home extends Component {
                     { title: 'Details',   url: '#' }
                   ]}
             />
-          </Slider>
+          </Scroller>
         </div>
 
 
@@ -272,8 +275,8 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
-
-        <div className="scrollable">
+        <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+          <Scroller {...settings}>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -289,6 +292,7 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          </Scroller>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
