@@ -51,8 +51,6 @@ export class Home extends Component {
         <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
         <div className="card-stack">
-          <div className="card"></div>
-          <div className="card"></div>
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
                 details    = { "5:30 PM - 6:45 PM" }
@@ -62,14 +60,14 @@ export class Home extends Component {
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
+          <div className="card"></div>
+          <div className="card"></div>
           <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
         </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
         <div className="card-stack">
-          <div className="card"></div>
-          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -77,6 +75,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          <div className="card"></div>
+          <div className="card"></div>
           <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
         </div>
 
@@ -122,8 +122,6 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
         <div className="card-stack">
-          <div className="card"></div>
-          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -131,6 +129,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          <div className="card"></div>
+          <div className="card"></div>
           <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
         </div>
 
@@ -179,8 +179,6 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
         <div className="card-stack">
-          <div className="card"></div>
-          <div className="card"></div>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -188,6 +186,8 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          <div className="card"></div>
+          <div className="card"></div>
           <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
         </div>
 

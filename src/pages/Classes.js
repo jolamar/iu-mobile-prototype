@@ -34,8 +34,6 @@ export class Classes extends Component {
       <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
 
       <div className="card-stack">
-        <div className="card"></div>
-        <div className="card"></div>
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
               details    = { "5:30 PM - 6:45 PM" }
@@ -45,14 +43,14 @@ export class Classes extends Component {
                 { title: 'Assignments',   url: '#' }
               ]}
         />
+        <div className="card"></div>
+        <div className="card"></div>
 
         <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
       </div>
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Assignments due today</h2>
       <div className="card-stack">
-        <div className="card"></div>
-        <div className="card"></div>
         <Card title      = { "Ch 9 HW" }
               details    = { "STAT-S 301" }
               subdetails = { "Today at 11:59 PM" }
@@ -60,6 +58,8 @@ export class Classes extends Component {
                 { title: 'Details',   url: '#' }
               ]}
         />
+        <div className="card"></div>
+        <div className="card"></div>
 
         <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
       </div>
@@ -70,8 +70,6 @@ export class Classes extends Component {
 
       <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Other assignments</h2>
       <div className="card-stack">
-        <div className="card"></div>
-        <div className="card"></div>
         <Card title      = { "Q&A 6" }
               details    = { "ECON-E 202" }
               subdetails = { "Tomorrow at 11:59 PM" }
@@ -79,6 +77,8 @@ export class Classes extends Component {
                 { title: 'Details', url: '#' }
               ]}
         />
+        <div className="card"></div>
+        <div className="card"></div>
 
         <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
       </div>
