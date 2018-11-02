@@ -11,7 +11,7 @@ export class Campus extends Component {
     const path = window.location.pathname
     const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== basepath + '/campus'}>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
         <div className="rvt-grid">
           <div className="rvt-grid__item">
             <Link to="/bus">

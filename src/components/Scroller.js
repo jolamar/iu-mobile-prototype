@@ -89,11 +89,13 @@ export class Scroller extends Component {
 
     // Scroller settings
     const settings = {
+      arrows: false,
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      swipeToSlide: true
     };
 
     return <div onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>

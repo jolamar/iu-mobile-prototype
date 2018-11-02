@@ -42,7 +42,7 @@ export class Home extends Component {
     const afternoon = hour >= 12 && hour < 17
     const evening = hour >= 17 || hour < 4
 
-    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
+    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
       {/* Morning time (4am - 12pm) */}
 

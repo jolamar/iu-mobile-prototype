@@ -30,7 +30,7 @@ export class Classes extends Component {
     const path = window.location.pathname
     const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
-    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" hidden={path !== basepath + '/classes'}>
+    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" >
       <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
 
       <Scroller disableScrollY={this.disableScrollY} enableScrollY={this.enableScrollY}>
