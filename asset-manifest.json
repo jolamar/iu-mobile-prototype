@@ -1,7 +1,7 @@
 {
   "main.css": "/iu-mobile-prototype/static/css/main.c11c5d18.chunk.css",
-  "main.js": "/iu-mobile-prototype/static/js/main.01bd8094.chunk.js",
-  "main.js.map": "/iu-mobile-prototype/static/js/main.01bd8094.chunk.js.map",
+  "main.js": "/iu-mobile-prototype/static/js/main.939ee123.chunk.js",
+  "main.js.map": "/iu-mobile-prototype/static/js/main.939ee123.chunk.js.map",
   "static/css/1.b32de0f1.chunk.css": "/iu-mobile-prototype/static/css/1.b32de0f1.chunk.css",
   "static/js/1.eae9a224.chunk.js": "/iu-mobile-prototype/static/js/1.eae9a224.chunk.js",
   "static/js/1.eae9a224.chunk.js.map": "/iu-mobile-prototype/static/js/1.eae9a224.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/main.c11c5d18.chunk.css.map": "/iu-mobile-prototype/static/css/main.c11c5d18.chunk.css.map",
   "static/css/1.b32de0f1.chunk.css.map": "/iu-mobile-prototype/static/css/1.b32de0f1.chunk.css.map",
   "index.html": "/iu-mobile-prototype/index.html",
-  "precache-manifest.ca100b83ca5a99272c2ad6e8cb1a3484.js": "/iu-mobile-prototype/precache-manifest.ca100b83ca5a99272c2ad6e8cb1a3484.js",
+  "precache-manifest.ff628220b3ac3c182459e432eaad1f67.js": "/iu-mobile-prototype/precache-manifest.ff628220b3ac3c182459e432eaad1f67.js",
   "service-worker.js": "/iu-mobile-prototype/service-worker.js"
 }
