@@ -5,7 +5,7 @@ import 'rivet-uits/js/rivet.min.js';
 import Slider from "react-slick";
 
 // Pages
-import { Bus, Campus, Classes, Help, Home, Labs, Settings } from '../pages'
+import { Campus, Classes, Help, Home, Settings } from '../pages'
 
 // Routing
 import { Link, withRouter } from "react-router-dom";

@@ -11,9 +11,9 @@ export class Campus extends Component {
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
         <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
-            <Link to="/bus">
+            <a href="/bus">
               <Card details={ "Bus Status" } />
-            </Link>
+            </a>
           </div>
           <div className="rvt-grid__item">
             <Card details={ "Locations" }/>
@@ -34,9 +34,9 @@ export class Campus extends Component {
             <Card details={ "Parking" }/>
           </div>
           <div className="rvt-grid__item">
-            <Link to="/labs">
+            <a href="/labs">
               <Card details={ "Labs & Printers" } />
-            </Link>
+            </a>
           </div>
         </div>
     </div>;
