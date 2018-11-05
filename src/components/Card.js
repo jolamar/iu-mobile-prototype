@@ -1,14 +1,14 @@
 import React from 'react'
 
-export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, links}) => (
-  <div className="rvt-panel rvt-panel--light card">
+export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, links, children, className}) => (
+  <div className={`rvt-panel rvt-panel--light card ${className || ''}`}>
     { banner && <div className="rvt-text-bold card__banner"><img alt={ bannerAlt || title } src={ banner } /></div> }
 
     { title && <div className="rvt-text-bold card__title">{ title }</div> }
 
     { subtitle && <div className="rvt-text-bold card__title">{ subtitle }</div> }
 
-    { details && <div className="card__detail">{ details }</div> }
+    { details && <div className={"card__detail"}>{ details }</div> }
 
     { subdetails && <div className="card__detail">{ subdetails }</div> }
 
@@ -19,6 +19,8 @@ export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, l
         )}
       </div>
     }
+
+    { children }
   </div>
 )
 
