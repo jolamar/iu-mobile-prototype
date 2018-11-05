@@ -52,7 +52,7 @@ export class Bus extends Component {
           </div> }
           details = {
             <div>
-              Departs in <span className="rvt-alert--success">2 mins</span> & <span className="rvt-alert--success">7 mins</span>
+              Departs in <span className="card__highlight--green rvt-text-bold">2 mins</span> & <span className="card__highlight--green rvt-text-bold">7 mins</span>
             </div>
           }
           links = {[

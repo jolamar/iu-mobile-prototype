@@ -137,13 +137,13 @@ export class Home extends Component {
               details    = {
                 <div>
                   <div className="rvt-m-top-sm rvt-m-bottom-xs rvt-badge rvt-badge--error">A Route</div> Stadium<br />
-                  Departs in <span className="rvt-alert--success">2 mins</span> & <span className="rvt-alert--success">7 mins</span>
+                  Departs in <span className="card__highlight--green rvt-text-bold">2 mins</span> & <span className="card__highlight--green rvt-text-bold">7 mins</span>
                 </div>
               }
               subdetails={
                 <div>
                   <div className="rvt-m-top-sm rvt-m-bottom-xs rvt-badge rvt-badge--warning">W Limited</div> Stadium<br />
-                  Departs in <span className="rvt-alert--success">6 mins</span> & <span className="rvt-alert--success">13 mins</span>
+                  Departs in <span className="card__highlight--green rvt-text-bold">6 mins</span> & <span className="card__highlight--green rvt-text-bold">13 mins</span>
                 </div>
               }
         />

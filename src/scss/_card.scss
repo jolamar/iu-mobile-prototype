@@ -16,8 +16,12 @@
       max-width: 100%;
     }
   }
-}
 
-.card__link {
-  color: $color-midnight !important;
+  &__link {
+    color: $color-midnight !important;
+  }
+
+  &__highlight--green {
+    color: $color-alert-green;
+  }
 }
