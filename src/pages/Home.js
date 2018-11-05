@@ -77,7 +77,7 @@ export class Home extends Component {
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
-        <div className="card-stack">
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -85,10 +85,21 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-          <div className="card"></div>
-          <div className="card"></div>
-          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
-        </div>
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
 
 
 
@@ -131,7 +142,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
-        <div className="card-stack">
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -139,10 +150,21 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-          <div className="card"></div>
-          <div className="card"></div>
-          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
-        </div>
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
@@ -188,7 +210,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
-        <div className="card-stack">
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -196,14 +218,23 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-          <div className="card"></div>
-          <div className="card"></div>
-          <p className="rvt-text-center rvt-ts-12">Tap to expand</p>
-        </div>
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
-
-
         <Card title      = { "Going to Stadium" }
               details    = {
                 <div>
