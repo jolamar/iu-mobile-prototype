@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Card} from "./Card";
 
 export class Stack extends Component {
   constructor(props) {

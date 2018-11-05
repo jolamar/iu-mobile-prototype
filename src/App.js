@@ -13,12 +13,12 @@ import { Bus, Labs } from './pages'
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-const subpages = ['/bus', '/labs']
+const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
+const subpages = [basepath + '/bus', basepath + '/labs']
 
 
 class App extends Component {
   render() {
-    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
     const path = window.location.pathname
 
     return <Router basename={basepath}>
@@ -32,8 +32,9 @@ class App extends Component {
             <Route path="/" component={Tabs} />
           </React.Fragment>
         }
-        <Route path="/bus" component={Bus} />
-        <Route path="/labs" component={Labs} />
+
+        <Route path={basepath+"/bus"} component={Bus} />
+        <Route path={basepath+"/labs"} component={Labs} />
         <Toolbar />
       </React.Fragment>
     </Router>;

@@ -24,12 +24,9 @@ export class Bus extends Component {
   }
 
   render() {
-    const path = window.location.pathname
-    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
-
     const routes = this.state.routes
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== basepath + '/bus'}>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
       <div className="rvt-alert rvt-alert--warning rvt-m-bottom-md" role="alertdialog" aria-labelledby="success-alert-title">
           <h1 className="rvt-alert__title" id="success-alert-title">Bus service suspended tomorrow morning</h1>

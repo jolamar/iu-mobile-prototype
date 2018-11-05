@@ -5,11 +5,8 @@ import { Card } from "../components";
 export class Labs extends Component {
 
   render() {
-    const path = window.location.pathname
-    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
-
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three" hidden={path !== basepath + '/labs'}>
+    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
     
      <h2 className="rvt-ts-23 rvt-text-bold">Nearest labs</h2>
 
