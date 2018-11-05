@@ -48,7 +48,6 @@ export class Home extends Component {
 
       { morning &&
       <React.Fragment>
-        <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
         <div className="card-stack">
           <Card title      = { "BUS-L 201" }

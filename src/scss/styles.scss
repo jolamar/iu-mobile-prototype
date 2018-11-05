@@ -91,8 +91,6 @@ html {
 
   &__tab {
     flex-grow: 1;
-
-
     background: none;
     border: none;
     border-bottom: .25rem solid transparent;
@@ -100,7 +98,7 @@ html {
     padding-right: 0;
     padding-left: 0;
     padding-bottom: .5rem;
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     font-size: .825rem;
     flex-shrink: 0;
 
@@ -118,7 +116,7 @@ html {
   }
 
   &__panel {
-    padding: $padding-base;
+    padding: 1rem $padding-base $padding-base;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 

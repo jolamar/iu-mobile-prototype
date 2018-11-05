@@ -12,7 +12,7 @@ export class Campus extends Component {
     const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
-        <div className="rvt-grid">
+        <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
             <Link to="/bus">
               <Card details={ "Bus Status" } />
@@ -23,7 +23,7 @@ export class Campus extends Component {
           </div>
         </div>
 
-        <div className="rvt-grid">
+        <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
             <Card details={ "Crimson Card" }/>
           </div>
@@ -32,7 +32,7 @@ export class Campus extends Component {
           </div>
         </div>
 
-        <div className="rvt-grid">
+        <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
             <Card details={ "Parking" }/>
           </div>
