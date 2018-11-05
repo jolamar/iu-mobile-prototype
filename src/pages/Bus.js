@@ -64,8 +64,8 @@ export class Bus extends Component {
 }
 
 function findTerminal(routeStops, allStops) {
-  var found = false
-  var i = 0
+  let found = false
+  let i = 0
   while(!found && i<=allStops.length) {
     let firstStopID = routeStops[0]
     let currentStopID = !!allStops[i] && allStops[i].id

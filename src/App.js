@@ -14,15 +14,14 @@ import { Bus, Labs } from './pages'
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { Locations } from './pages/Locations';
 
-const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
-const subpages = [basepath + '/bus', basepath + '/labs', basepath + "/locations"]
+const subpages = ['/bus', '/labs', "/locations"]
 
 
 class App extends Component {
   render() {
     const path = window.location.pathname
 
-    return <Router basename={basepath}>
+    return <Router>
       <React.Fragment>
         {subpages.indexOf(path) === -1 &&
           <React.Fragment>
@@ -34,9 +33,9 @@ class App extends Component {
           </React.Fragment>
         }
 
-        <Route path={basepath+"/bus"} component={Bus} />
-        <Route path={basepath+"/labs"} component={Labs} />
-        <Route path={basepath+"/locations"} component={Locations} />
+        <Route path={"/bus"} component={Bus} />
+        <Route path={"/labs"} component={Labs} />
+        <Route path={"/locations"} component={Locations} />
         <Toolbar />
       </React.Fragment>
     </Router>;
