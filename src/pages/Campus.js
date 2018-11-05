@@ -15,7 +15,9 @@ export class Campus extends Component {
             </a>
           </div>
           <div className="rvt-grid__item">
-            <Card details={ "Locations" }/>
+            <a href={basepath + "/locations"}>
+              <Card details={ "Locations" } />
+            </a>
           </div>
         </div>
 

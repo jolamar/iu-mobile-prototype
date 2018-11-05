@@ -1,0 +1,494 @@
+[
+ {
+   "Code": "AB",
+   "Name": "Multidisciplinary Engineering & Sciences (MESH) Hall"
+ },
+ {
+   "Code": "AC",
+   "Name": "Cedar Hall-Union Street Center"
+ },
+ {
+   "Code": "AD",
+   "Name": "Auditorium"
+ },
+ {
+   "Code": "AG",
+   "Name": "American Indian Center"
+ },
+ {
+   "Code": "AM",
+   "Name": "DeVault Alumni Center"
+ },
+ {
+   "Code": "AN",
+   "Name": "701 E. 8th St (Anthropology Annex)"
+ },
+ {
+   "Code": "AS",
+   "Name": "Assembly Hall (Simon Skjodt)"
+ },
+ {
+   "Code": "AY",
+   "Name": "Aydelotte Hall (Ashton)"
+ },
+ {
+   "Code": "AZ",
+   "Name": "Fina Arts Studio Building"
+ },
+ {
+   "Code": "BH",
+   "Name": "Ballantine Hall"
+ },
+ {
+   "Code": "BQ",
+   "Name": "Briscoe Quad"
+ },
+ {
+   "Code": "BY",
+   "Name": "Bryan Hall"
+ },
+ {
+   "Code": "C2",
+   "Name": "Classroom-Office Building"
+ },
+ {
+   "Code": "C3",
+   "Name": "Carmichael Center"
+ },
+ {
+   "Code": "C9",
+   "Name": "Cognitive Science (CRCC 100)"
+ },
+ {
+   "Code": "CG",
+   "Name": "Godfrey Grad & Exec Ed Ctr"
+ },
+ {
+   "Code": "CH",
+   "Name": "Chemistry Building"
+ },
+ {
+   "Code": "CN",
+   "Name": "IU Cinema"
+ },
+ {
+   "Code": "CS",
+   "Name": "Arts Annex"
+ },
+ {
+   "Code": "CU",
+   "Name": "Student Central on Union; Student Academic Center (408 N. Union)"
+ },
+ {
+   "Code": "CX",
+   "Name": "Chemistry Addition"
+ },
+ {
+   "Code": "ED",
+   "Name": "Wendell W. Wright Education Building"
+ },
+ {
+   "Code": "EG",
+   "Name": "Eigenmann Hall"
+ },
+ {
+   "Code": "EO",
+   "Name": "Edmondson Hall (Collins Center)"
+ },
+ {
+   "Code": "EP",
+   "Name": "Ernie Pyle Hall"
+ },
+ {
+   "Code": "ER",
+   "Name": "Smith Research Center (2805 E. 10th)"
+ },
+ {
+   "Code": "EX",
+   "Name": "Optometry Clinic"
+ },
+ {
+   "Code": "FA",
+   "Name": "Fine Arts Building"
+ },
+ {
+   "Code": "FF",
+   "Name": "Franklin Hall"
+ },
+ {
+   "Code": "FK",
+   "Name": "504 N. Fess"
+ },
+ {
+   "Code": "FN",
+   "Name": "712 E. 8th St. (FNECC)"
+ },
+ {
+   "Code": "FQ",
+   "Name": "Foster Quad (Shea & Martin Hall)"
+ },
+ {
+   "Code": "FR",
+   "Name": "Forest Quad"
+ },
+ {
+   "Code": "FV",
+   "Name": "Art Museum (Sidney & Lois Eskenazi)"
+ },
+ {
+   "Code": "FX",
+   "Name": "McCalla School (Fine Arts Annex)"
+ },
+ {
+   "Code": "FY",
+   "Name": "501 N. Park"
+ },
+ {
+   "Code": "GA",
+   "Name": "Global & International Studies"
+ },
+ {
+   "Code": "GB",
+   "Name": "Goodbody Hall (Wells Quadrangle)"
+ },
+ {
+   "Code": "GG",
+   "Name": "Griggs Lounge (Ashton)"
+ },
+ {
+   "Code": "GL",
+   "Name": "Glenn A. Black Laboratory (9th and Fess)"
+ },
+ {
+   "Code": "GR",
+   "Name": "Gresham Hall (Foster Quad)"
+ },
+ {
+   "Code": "GS",
+   "Name": "Geological Survey"
+ },
+ {
+   "Code": "GY",
+   "Name": "Geological Services"
+ },
+ {
+   "Code": "HA",
+   "Name": "324 N. Jordan"
+ },
+ {
+   "Code": "HC",
+   "Name": "Health Center"
+ },
+ {
+   "Code": "HE",
+   "Name": "Hershey Hall (Ashton Center)"
+ },
+ {
+   "Code": "HG",
+   "Name": "803 E. 8th St."
+ },
+ {
+   "Code": "HH",
+   "Name": "Hodge Hall (Kelley School of Business); Prebys Career Service Center"
+ },
+ {
+   "Code": "HK",
+   "Name": "Hillcrest"
+ },
+ {
+   "Code": "HU",
+   "Name": "Hutton Honors College (811 E. 7th Street)"
+ },
+ {
+   "Code": "I",
+   "Name": "School of Informatics (West-901 E. 10th St)"
+ },
+ {
+   "Code": "I2",
+   "Name": "School of Informatics (East-919 E. 10th St)"
+ },
+ {
+   "Code": "IC",
+   "Name": "International Center (111 S. Jordan Ave)"
+ },
+ {
+   "Code": "IF",
+   "Name": "Luddy Hall"
+ },
+ {
+   "Code": "IN",
+   "Name": "402 N. Park"
+ },
+ {
+   "Code": "JA",
+   "Name": "321 N. Woodlawn Ave"
+ },
+ {
+   "Code": "JH",
+   "Name": "Jordan Hall"
+ },
+ {
+   "Code": "JS",
+   "Name": "Music East Studio Building"
+ },
+ {
+   "Code": "KD",
+   "Name": "ROTC/Military Science (814 E. 3rd St)"
+ },
+ {
+   "Code": "KH",
+   "Name": "Kirkwood Hall"
+ },
+ {
+   "Code": "LH",
+   "Name": "Lindley Hall"
+ },
+ {
+   "Code": "LI",
+   "Name": "Wells Library"
+ },
+ {
+   "Code": "LL",
+   "Name": "Lilly Library"
+ },
+ {
+   "Code": "LS",
+   "Name": "Lewis Building"
+ },
+ {
+   "Code": "LW",
+   "Name": "Lowell E. Baier Hall (Maurer School of Law)"
+ },
+ {
+   "Code": "LZ",
+   "Name": "LaCasa/Latino Cultural Ctr (715 E. 7th St)"
+ },
+ {
+   "Code": "M",
+   "Name": "Music Library and Recital Center, Bess Meshulam Simon; Speech & Hearing Clinic"
+ },
+ {
+   "Code": "M2",
+   "Name": "Mathers Museum"
+ },
+ {
+   "Code": "MA",
+   "Name": "Music Annex"
+ },
+ {
+   "Code": "MC",
+   "Name": "Musical Arts Center"
+ },
+ {
+   "Code": "ME",
+   "Name": "Cravens Hall (541 N. Woodlawn Ave.)"
+ },
+ {
+   "Code": "MG",
+   "Name": "Marching Hundred Hall (Ray E. Cramer)"
+ },
+ {
+   "Code": "MM",
+   "Name": "Memorial Hall (Wells Quadrangle)"
+ },
+ {
+   "Code": "MN",
+   "Name": "McNutt Central Quad"
+ },
+ {
+   "Code": "MO",
+   "Name": "Morrison Hall"
+ },
+ {
+   "Code": "MQ",
+   "Name": "Mason Hall"
+ },
+ {
+   "Code": "MS",
+   "Name": "Memorial Stadium"
+ },
+ {
+   "Code": "MU",
+   "Name": "Merrill Hall"
+ },
+ {
+   "Code": "MV",
+   "Name": "Mellencamp Pavilion"
+ },
+ {
+   "Code": "MY",
+   "Name": "Myers Hall"
+ },
+ {
+   "Code": "MZ",
+   "Name": "Indiana Institute on Disability and Community (1905 N. Range Rd)"
+ },
+ {
+   "Code": "OA",
+   "Name": "300 N. Jordan"
+ },
+ {
+   "Code": "OB",
+   "Name": "Kirkwood Observatory"
+ },
+ {
+   "Code": "OC",
+   "Name": "Off-Campus (BLOCOC in SIS)"
+ },
+ {
+   "Code": "OP",
+   "Name": "Optometry Building"
+ },
+ {
+   "Code": "OW",
+   "Name": "Owen Hall"
+ },
+ {
+   "Code": "PC",
+   "Name": "Career Development Center (625 N. Jordan)"
+ },
+ {
+   "Code": "PH",
+   "Name": "Public Health, School of"
+ },
+ {
+   "Code": "PO",
+   "Name": "Poplars (400 E. 7th)"
+ },
+ {
+   "Code": "PS",
+   "Name": "1217 E. Atwater Ave"
+ },
+ {
+   "Code": "PV",
+   "Name": "SPEA"
+ },
+ {
+   "Code": "PY",
+   "Name": "Psychology"
+ },
+ {
+   "Code": "R2",
+   "Name": "Journal of American History"
+ },
+ {
+   "Code": "RA",
+   "Name": "Spruce Hall"
+ },
+ {
+   "Code": "RB",
+   "Name": "Student Recreational Sports & Aquatic Center"
+ },
+ {
+   "Code": "RE",
+   "Name": "Read Center"
+ },
+ {
+   "Code": "RH",
+   "Name": "Rawles Hall"
+ },
+ {
+   "Code": "S2",
+   "Name": "Multidisciplinary Science Building II"
+ },
+ {
+   "Code": "S7",
+   "Name": "Inst. for Social Research (1022 E. 3rd.)"
+ },
+ {
+   "Code": "SB",
+   "Name": "Student Building (Frances Morgan Swain)"
+ },
+ {
+   "Code": "SE",
+   "Name": "Swain East"
+ },
+ {
+   "Code": "SH",
+   "Name": "Shea Hall (Foster Quad)"
+ },
+ {
+   "Code": "SI",
+   "Name": "Simon Hall"
+ },
+ {
+   "Code": "SP",
+   "Name": "Monroe Co. Govt Center (501 N. Morton St)"
+ },
+ {
+   "Code": "SW",
+   "Name": "Swain West"
+ },
+ {
+   "Code": "SY",
+   "Name": "Sycamore Hall"
+ },
+ {
+   "Code": "T2",
+   "Name": "Global NOC Building"
+ },
+ {
+   "Code": "TE",
+   "Name": "Teter Quad"
+ },
+ {
+   "Code": "TH",
+   "Name": "Lee Norvelle Theatre and Drama Center / Marcellus Neal and Frances Marshall Black Culture Center"
+ },
+ {
+   "Code": "TO",
+   "Name": "1800 N. Fee Lane"
+ },
+ {
+   "Code": "TP",
+   "Name": "Tennis Center"
+ },
+ {
+   "Code": "TV",
+   "Name": "Radio and TV Building"
+ },
+ {
+   "Code": "UB",
+   "Name": "Union Building"
+ },
+ {
+   "Code": "VW",
+   "Name": "Wilkinson Hall (Volleyball/Wrestling)"
+ },
+ {
+   "Code": "WA",
+   "Name": "Weatherly Hall (Ashton Center)"
+ },
+ {
+   "Code": "WH",
+   "Name": "Woodburn Hall"
+ },
+ {
+   "Code": "WI",
+   "Name": "Wilkie Quad"
+ },
+ {
+   "Code": "WM",
+   "Name": "Wildermuth Intramural Center"
+ },
+ {
+   "Code": "WT",
+   "Name": "Wright Quad"
+ },
+ {
+   "Code": "WU",
+   "Name": "Social Work (1127 E. Atwater Ave)"
+ },
+ {
+   "Code": "WY",
+   "Name": "Wylie Hall"
+ },
+ {
+   "Code": "XY",
+   "Name": "Auxiliary Library Facility"
+ },
+ {
+   "Code": "ZB",
+   "Name": "Political Theory"
+ }
+]
