@@ -21,7 +21,7 @@ export class Stack extends Component {
         {this.props.children}
 
       <div className="rvt-text-center">
-        <button className="card-stack__toggle rvt-ts-12 rvt-p-tb-sm">Tap to {collapsed ? 'expand' : 'collapse' }</button>
+        <button className="rvt-button--plain card-stack__toggle rvt-ts-12 rvt-p-tb-sm">Tap to {collapsed ? 'expand' : 'collapse' }</button>
       </div>
     </div>;
   }
