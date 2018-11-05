@@ -9,7 +9,8 @@ export class Bus extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      routes: []
+      routes: [],
+      stops: []
     };
 
   }
@@ -21,10 +22,18 @@ export class Bus extends Component {
 
         vm.setState({ routes: res.data })
       })
+
+    axios('https://githubapi.iu.edu/api/map/stops')
+      .then((res) => {
+
+        vm.setState({ stops: res.data })
+      })
+      
   }
 
   render() {
     const routes = this.state.routes
+    const stops = this.state.stops
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
@@ -36,11 +45,11 @@ export class Bus extends Component {
       { !!routes && routes.map(route =>
         <Card key={route.id} title = {
           <div>
-            <div className="rvt-m-top-remove rvt-m-bottom-xs rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div> Stadium<br />
+            <div className="rvt-m-top-remove rvt-m-bottom-xs rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div> {findTerminal(route.stops, stops)}<br />
           </div> }
           details = {
             <div>
-              Departs in <span className="rvt-alert--success">2 mins</span> & <span className="rvt-alert--success">7 mins</span>
+              Departs in <span className="card__highlight--green rvt-text-bold">2 mins</span> & <span className="card__highlight--green rvt-text-bold">7 mins</span>
             </div>
           }
           links = {[
@@ -52,4 +61,25 @@ export class Bus extends Component {
 
     </div>;
   }
+}
+
+function findTerminal(routeStops, allStops) {
+  var found = false
+  var i = 0
+  while(!found && i<=allStops.length) {
+    let firstStopID = routeStops[0]
+    let currentStopID = !!allStops[i] && allStops[i].id
+
+    if (firstStopID === currentStopID) {
+      console.log(allStops[i])
+      found = true
+      return removeExtraChars(allStops[i].name)
+    }
+    i++
+  }
+}
+
+function removeExtraChars(name) {
+  name = name.split("(")
+  return name[0]
 }
