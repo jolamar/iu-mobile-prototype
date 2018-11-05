@@ -3,14 +3,9 @@ import React, { Component } from 'react';
 // Icons
 import { IconChat, IconPhone, IconEnvelope, IconMagnifyingGlass } from "../icons";
 
-
-
 export class Help extends Component {
 
   render() {
-    const path = window.location.pathname
-    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
-
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four">
       <div className="rvt-m-card">
         <div className="rvt-ts-14 rvt-m-bottom-sm">Contact us</div>

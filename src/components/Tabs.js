@@ -50,7 +50,6 @@ class Tabs extends Component {
 
 
   handleTouchStart(e) {
-    e.preventDefault()
     let touchobj = e.changedTouches[0]
 
     this.setState({
@@ -98,11 +97,10 @@ class Tabs extends Component {
       this.enableScrollY()
     }.bind(this), 500)
 
-    e.preventDefault()
   }
 
   handleTouchMove(e) {
-    e.preventDefault()
+    // in the past used to prevent default..
   }
 
   setCurrentPage(oldIndex, newIndex) {
