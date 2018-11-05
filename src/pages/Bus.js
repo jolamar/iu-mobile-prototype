@@ -43,7 +43,7 @@ export class Bus extends Component {
       </div>
 
       { !!routes && routes.map(route =>
-        <Card key={route.id} title = {
+        <Card className="rvt-m-top-sm" key={route.id} title = {
           <div>
             <div className="rvt-m-top-remove rvt-m-bottom-xs rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div> {findTerminal(route.stops, stops)}<br />
           </div> }
