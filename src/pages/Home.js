@@ -1,14 +1,33 @@
 import React, { Component } from "react";
 
-import { Card } from "../components";
+import { Card, Stack } from "../components";
 
 export class Home extends Component {
 
-  render() {
-    // Path
-    const path = window.location.pathname
-    const basepath = process.env.NODE_ENV === 'production' ? '/iu-mobile-prototype' : ''
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      scrollY: 'scroll'
+    }
+
+    this.disableScrollY = this.disableScrollY.bind(this)
+    this.enableScrollY = this.enableScrollY.bind(this)
+  }
+
+  disableScrollY() {
+    this.setState({
+      scrollY: '-webkit-paged-x'
+    })
+  }
+
+  enableScrollY() {
+    this.setState({
+      scrollY: 'scroll'
+    })
+  }
+
+  render() {
     // Name
     const firstName = 'Dwight'
 
@@ -18,17 +37,15 @@ export class Home extends Component {
     const morning = hour >= 4 && hour < 12
     const afternoon = hour >= 12 && hour < 17
     const evening = hour >= 17 || hour < 4
-    console.log(`The hour is ${hour}\nIt's morning time: ${morning}\nIt's afternoon: ${afternoon}\nIt's evening: ${evening}`)
 
-    return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one" hidden={path !== basepath + '/'}>
+    return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
       {/* Morning time (4am - 12pm) */}
 
       { morning &&
       <React.Fragment>
-        <h2 className="rvt-ts-23 rvt-text-bold">Good morning, { firstName }.</h2>
         <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
-        <div className="scrollable">
+        <Stack>
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
                 details    = { "5:30 PM - 6:45 PM" }
@@ -38,21 +55,29 @@ export class Home extends Component {
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "BUS-E 125" }
-                subtitle   = { "Intro to Ethics in Business" }
-                details    = { "7:00 PM - 7:45 PM" }
-                subdetails = { "Simon Hall 010" }
+          <Card title      = { "BUS-L 201" }
+                subtitle   = { "Legal Environments of Business" }
+                details    = { "5:30 PM - 6:45 PM" }
+                subdetails = { "Hodge Hall 1000" }
                 links      = {[
                   { title: 'Getting there', url: '#' },
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
-        </div>
+          <Card title      = { "BUS-L 201" }
+                subtitle   = { "Legal Environments of Business" }
+                details    = { "5:30 PM - 6:45 PM" }
+                subdetails = { "Hodge Hall 1000" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Assignments',   url: '#' }
+                ]}
+          />
+        </Stack>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
 
-        <div className="scrollable">
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -60,15 +85,23 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
                   { title: 'Getting there', url: '#' },
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </div>
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
+
+
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
@@ -109,9 +142,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
-
-        <div className="scrollable">
-
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -119,16 +150,22 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
                   { title: 'Getting there', url: '#' },
                   { title: 'Details',   url: '#' }
                 ]}
           />
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
 
-        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
 
@@ -173,8 +210,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
-
-        <div className="scrollable">
+        <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -182,19 +218,23 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-
-          <Card title      = { "McNutt Food Court" }
-                details    = { "Open now: 9:00 AM - 8:00 PM" }
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
                   { title: 'Getting there', url: '#' },
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </div>
+          <Card title      = { "Gresham Food Court" }
+                details    = { "Open now: 7:00 AM - 2:00 AM" }
+                links      = {[
+                  { title: 'Getting there', url: '#' },
+                  { title: 'Details',   url: '#' }
+                ]}
+          />
+        </Stack>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
-
-
         <Card title      = { "Going to Stadium" }
               details    = {
                 <div>
