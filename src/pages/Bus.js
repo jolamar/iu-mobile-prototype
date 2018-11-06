@@ -23,12 +23,13 @@ export class Bus extends Component {
         vm.setState({ routes: res.data })
       })
 
-    axios('https://githubapi.iu.edu/api/map/stops')
-      .then((res) => {
+    setTimeout(function() {
+      axios('https://githubapi.iu.edu/api/map/stops')
+        .then((res) => {
 
-        vm.setState({ stops: res.data })
-      })
-      
+          vm.setState({ stops: res.data })
+        })
+    }, 200)
   }
 
   render() {
