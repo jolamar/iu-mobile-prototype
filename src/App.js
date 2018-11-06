@@ -18,8 +18,21 @@ const subpages = ['/bus', '/labs', "/locations"]
 const subpageTitles = ['Bus', 'Labs', 'Locations']
 
 
-
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      searchOpen: false
+    }
+    this.toggleSearch = this.toggleSearch.bind(this)
+  }
+
+  toggleSearch() {
+    this.setState({searchOpen: !this.state.searchOpen})
+  }
+
   render() {
     const path = window.location.pathname
     const urlIndex = subpages.indexOf(path)
@@ -28,11 +41,13 @@ class App extends Component {
       <React.Fragment>
         {urlIndex === -1 &&
           <React.Fragment>
-            <AppHeader campus="Bloomington">
+            <AppHeader searchOpen={this.state.searchOpen} campus="Bloomington">
               <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
             </AppHeader>
 
-            <Route path="/" component={Tabs} />
+            <Route path="/" render={() =>
+              <Tabs searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch} />
+            } />
           </React.Fragment>
         }
 
@@ -43,7 +58,11 @@ class App extends Component {
         <Route path={"/bus"} component={Bus} />
         <Route path={"/labs"} component={Labs} />
         <Route path={"/locations"} component={Locations} />
-        <Toolbar />
+
+
+        {!this.state.searchOpen &&
+          <Toolbar searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch}/>
+        }
       </React.Fragment>
     </Router>;
   }

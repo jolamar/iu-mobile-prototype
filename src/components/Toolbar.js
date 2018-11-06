@@ -19,7 +19,7 @@ export class Toolbar extends Component {
     return <div className="rvt-m-toolbar">
       <div className="rvt-text-center rvt-m-toolbar__content">
         <button
-          onClick={() => alert('hey, you clicked!')}
+          onClick={() => this.props.toggleSearch()}
           className="rvt-m-search-button"
         >
           <span className="rvt-sr-only">Search</span>

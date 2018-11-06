@@ -9,6 +9,7 @@ import { Campus, Classes, Help, Home, Settings } from '../pages'
 
 // Routing
 import { Link, withRouter } from "react-router-dom";
+import {IconMagnifyingGlass, IconClose} from "../icons";
 
 const pages = ['/', '/classes', '/campus', '/help', '/settings']
 
@@ -128,25 +129,40 @@ class Tabs extends Component {
 
     const currentPage = this.state.currentPage
 
-    return <React.Fragment>
-        <div className="rvt-m-tabs">
+    const searchOpen = this.props.searchOpen;
 
-          <div className="rvt-m-tabs__tablist" role="tablist" aria-label="Rivet tabs">
-            <Link onClick={()=>this.goToPage(0)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 0} to="/">Home</Link>
-            <Link onClick={()=>this.goToPage(1)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 1} to="/classes">Classes</Link>
-            <Link onClick={()=>this.goToPage(2)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 2} to="/campus">Campus</Link>
-            <Link onClick={()=>this.goToPage(3)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 3} to="/help">Help</Link>
-            <Link onClick={()=>this.goToPage(4)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 4} to="/settings">Settings</Link>
-          </div>
+    return <React.Fragment>
+        <div className={`rvt-m-tabs ${searchOpen ? 'rvt-m-tabs--search' : ''}`}>
+
+          {!searchOpen &&
+            <div className="rvt-m-tabs__tablist" role="tablist" aria-label="Rivet tabs">
+              <Link onClick={()=>this.goToPage(0)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 0} to="/">Home</Link>
+              <Link onClick={()=>this.goToPage(1)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 1} to="/classes">Classes</Link>
+              <Link onClick={()=>this.goToPage(2)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 2} to="/campus">Campus</Link>
+              <Link onClick={()=>this.goToPage(3)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 3} to="/help">Help</Link>
+              <Link onClick={()=>this.goToPage(4)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 4} to="/settings">Settings</Link>
+            </div>
+          }
+          {searchOpen &&
+            <button
+              onClick={() => this.props.toggleSearch()}
+              className="rvt-m-search-button"
+            >
+              <span className="rvt-sr-only">Close search</span>
+              { IconClose }
+            </button>
+          }
 
           <div ref={(ref) => this.panel = ref} className="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
-            <Slider ref={slider => (this.slider = slider)} beforeChange={this.setCurrentPage} {...settings}>
-              <Home />
-              <Classes />
-              <Campus />
-              <Help />
-              <Settings />
-            </Slider>
+            {!this.props.searchOpen &&
+              <Slider ref={slider => (this.slider = slider)} beforeChange={this.setCurrentPage} {...settings}>
+                <Home />
+                <Classes />
+                <Campus />
+                <Help />
+                <Settings />
+              </Slider>
+            }
           </div>
 
         </div>

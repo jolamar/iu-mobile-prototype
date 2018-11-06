@@ -41,7 +41,7 @@ html {
   align-items: center;
   padding-top: $padding-base/2;
   padding-right: $padding-base;
-  padding-bottom: $padding-base/2;
+  padding-bottom: $padding-base;
   padding-left: $padding-base;
 
   &__title {
@@ -83,6 +83,15 @@ html {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
+  &--search {
+    align-items: center;
+    height: 10px;
+
+    .rvt-m-search-button {
+      margin-top: -1.5rem;
+    }
+  }
 
   &__tablist {
     flex-shrink: 0;
