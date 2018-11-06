@@ -44,6 +44,10 @@ html {
   padding-bottom: $padding-base;
   padding-left: $padding-base;
 
+  &__logo {
+    height: 36px;
+  }
+
   &__title {
     display: flex;
     align-items: center;
