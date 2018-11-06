@@ -9,7 +9,7 @@ import { Campus, Classes, Help, Home, Settings } from '../pages'
 
 // Routing
 import { Link, withRouter } from "react-router-dom";
-import {IconMagnifyingGlass, IconClose} from "../icons";
+import {IconClose} from "../icons";
 
 const pages = ['/', '/classes', '/campus', '/help', '/settings']
 
