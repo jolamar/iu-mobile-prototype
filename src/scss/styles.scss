@@ -92,6 +92,32 @@ html {
       margin-top: -1.5rem;
       background-color: #ED174C;
     }
+
+    .rvt-m-tabs__panel {
+      width: 100%;
+    }
+
+    .rvt-m-search-input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      width: auto;
+      display: inline-block;
+      margin-left: 1rem;
+      vertical-align: top;
+    }
+
+    .rvt-m-search-help {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      color: #676767;
+
+      svg {
+        margin-right: .75em;
+      }
+    }
   }
 
   &__tablist {

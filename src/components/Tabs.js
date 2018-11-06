@@ -9,7 +9,7 @@ import { Campus, Classes, Help, Home, Settings } from '../pages'
 
 // Routing
 import { Link, withRouter } from "react-router-dom";
-import {IconClose} from "../icons";
+import {IconChat, IconClose, IconTrident} from "../icons";
 
 const pages = ['/', '/classes', '/campus', '/help', '/settings']
 
@@ -162,6 +162,13 @@ class Tabs extends Component {
                 <Help />
                 <Settings />
               </Slider>
+            }
+            {searchOpen &&
+              <div className="rvt-m-top-lg">
+                {IconTrident}
+                <input type="text" className="rvt-m-search-input" aria-describedby="search-help" />
+                <small id="search-help" className="rvt-m-search-help rvt-m-top-sm">{IconChat} Search for tasks, help, and people</small>
+              </div>
             }
           </div>
 
