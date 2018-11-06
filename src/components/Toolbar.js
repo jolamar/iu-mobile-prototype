@@ -25,7 +25,7 @@ export class Toolbar extends Component {
           <span className="rvt-sr-only">Search</span>
           { IconMagnifyingGlass }
         </button>
-        <p>Good { morning && 'morning' }{ afternoon && 'afternoon' }{ evening && 'evening' }, {firstName}</p>
+        {/*<p>Good { morning && 'morning' }{ afternoon && 'afternoon' }{ evening && 'evening' }, {firstName}</p>*/}
       </div>
     </div>;
   }
