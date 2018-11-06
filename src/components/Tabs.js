@@ -26,14 +26,20 @@ class Tabs extends Component {
       startX: 0,
       touchStart: new Date().getTime(),
       isHorizontalSwipe: false,
-      isVerticalSwipe: false
+      isVerticalSwipe: false,
+      query: '',
+      searched: false
     }
+
     this.handleTouchStart = this.handleTouchStart.bind(this)
     this.handleTouchMove = this.handleTouchMove.bind(this)
     this.handleTouchEnd = this.handleTouchEnd.bind(this)
     this.disableScrollY = this.disableScrollY.bind(this)
     this.enableScrollY = this.enableScrollY.bind(this)
     this.setCurrentPage = this.setCurrentPage.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
+    this.handleSearchInput = this.handleSearchInput.bind(this)
+    this.cancelSearch = this.cancelSearch.bind(this)
     this.goToPage = this.goToPage.bind(this)
   }
 
@@ -104,6 +110,20 @@ class Tabs extends Component {
     // in the past used to prevent default..
   }
 
+  handleSearch(e) {
+    e.preventDefault()
+    this.setState({searched: true})
+  }
+
+  cancelSearch(e) {
+    e.preventDefault()
+    this.setState({searched: false, query: ''})
+  }
+
+  handleSearchInput(e) {
+    this.setState({query: e.target.value});
+  }
+
   setCurrentPage(oldIndex, newIndex) {
     this.panel.scrollTo(0, 0)
     this.setState({currentPage: newIndex})
@@ -129,7 +149,8 @@ class Tabs extends Component {
 
     const currentPage = this.state.currentPage
 
-    const searchOpen = this.props.searchOpen;
+    const searchOpen = this.props.searchOpen
+    const searched = this.state.searched
 
     return <React.Fragment>
         <div className={`rvt-m-tabs ${searchOpen ? 'rvt-m-tabs--search' : ''}`}>
@@ -164,13 +185,46 @@ class Tabs extends Component {
               </Slider>
             }
             {searchOpen &&
-              <div className="rvt-m-top-lg rvt-display-flex">
-                {IconTrident}
-                <div style={{width: "80%"}}>
-                  <input type="text" className="rvt-m-search-input" aria-describedby="search-help" />
-                  <small id="search-help" className="rvt-m-search-help rvt-m-top-sm">{IconChat} Search for tasks, help, and people</small>
-                </div>
-              </div>
+              <React.Fragment>
+                {!searched &&
+                  <div className="rvt-m-top-lg rvt-display-flex">
+                    {IconTrident}
+                    <form onSubmit={this.handleSearch} style={{width: "80%"}}>
+                      <input autoFocus={true} type="text" onChange={this.handleSearchInput} value={this.state.query} className="rvt-m-search-input" aria-describedby="search-help" />
+                      <small id="search-help" className="rvt-m-search-help rvt-m-top-sm">{IconChat} Search for tasks, help, and people</small>
+                    </form>
+                  </div>
+                }
+                {searched && <React.Fragment>
+                  <button className="rvt-button" onClick={this.cancelSearch}>{ IconClose } <span className="rvt-m-left-xs rvt-text-regular">Results for "{this.state.query}"</span></button>
+                  <h2 className="rvt-text-bold rvt-m-top-xl">KNOWLEDGE BASE <span className="rvt-ts-12 rvt-text-regular">(2 Results)</span></h2>
+                  <ul className="rvt-plain-list">
+                    <li>
+                      <a href="https://access.iu.edu/passphrase">
+                        <h3 className="rvt-text-left rvt-ts-20">Changing your passphrase</h3>
+                        <span className="rvt-ts-12">https://access.iu.edu/passphrase</span>
+                      </a>
+                    </li>
+                    <li className="rvt-m-top-sm">
+                      <a href="https://access.iu.edu/passphrase">
+                        <h3 className="rvt-text-left rvt-ts-20">The human torch could not get a bank loan</h3>
+                        <span className="rvt-ts-12">https://access.iu.edu/HumanTorch</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <h2 className="rvt-text-bold rvt-m-top-xl">PEOPLE <span className="rvt-ts-12 rvt-text-regular">(1 Result)</span></h2>
+                  <ul className="rvt-plain-list">
+                    <li>
+                      <a href="https://access.iu.edu/timdoe">
+                        <h3 className="rvt-text-left rvt-ts-20">Timothy Doe</h3>
+                        <span className="rvt-ts-12">Student</span>
+                      </a>
+                    </li>
+                  </ul>
+                </React.Fragment>
+                }
+              </React.Fragment>
             }
           </div>
 
