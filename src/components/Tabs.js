@@ -164,10 +164,12 @@ class Tabs extends Component {
               </Slider>
             }
             {searchOpen &&
-              <div className="rvt-m-top-lg">
+              <div className="rvt-m-top-lg rvt-display-flex">
                 {IconTrident}
-                <input type="text" className="rvt-m-search-input" aria-describedby="search-help" />
-                <small id="search-help" className="rvt-m-search-help rvt-m-top-sm">{IconChat} Search for tasks, help, and people</small>
+                <div style={{width: "80%"}}>
+                  <input type="text" className="rvt-m-search-input" aria-describedby="search-help" />
+                  <small id="search-help" className="rvt-m-search-help rvt-m-top-sm">{IconChat} Search for tasks, help, and people</small>
+                </div>
               </div>
             }
           </div>
