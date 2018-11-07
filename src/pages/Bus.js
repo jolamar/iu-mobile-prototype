@@ -23,12 +23,13 @@ export class Bus extends Component {
         vm.setState({ routes: res.data })
       })
 
-    axios('https://githubapi.iu.edu/api/map/stops')
-      .then((res) => {
+    setTimeout(function() {
+      axios('https://githubapi.iu.edu/api/map/stops')
+        .then((res) => {
 
-        vm.setState({ stops: res.data })
-      })
-      
+          vm.setState({ stops: res.data })
+        })
+    }, 200)
   }
 
   render() {
@@ -43,7 +44,7 @@ export class Bus extends Component {
       </div>
 
       { !!routes && routes.map(route =>
-        <Card key={route.id} title = {
+        <Card className="rvt-m-top-sm" key={route.id} title = {
           <div>
             <div className="rvt-m-top-remove rvt-m-bottom-xs rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div> {findTerminal(route.stops, stops)}<br />
           </div> }
@@ -64,8 +65,8 @@ export class Bus extends Component {
 }
 
 function findTerminal(routeStops, allStops) {
-  var found = false
-  var i = 0
+  let found = false
+  let i = 0
   while(!found && i<=allStops.length) {
     let firstStopID = routeStops[0]
     let currentStopID = !!allStops[i] && allStops[i].id

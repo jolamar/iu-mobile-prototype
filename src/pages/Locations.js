@@ -32,9 +32,12 @@ export class Locations extends Component {
       <h2 className="rvt-ts-23 rvt-text-bold">Locations</h2>
 
       { !!buildings && buildings.map(building =>
-        <Card key={building.id} title = {building.Name}
-          details = {building.Code}
-        />
+        <Card key={building.id + building.Name}
+              title = {building.Name}
+              className="rvt-m-top-xs rvt-p-all-sm"
+        >
+          <div className="card__detail rvt-ts-12">{ building.Code }</div>
+        </Card>
       )}
 
     </div>;
