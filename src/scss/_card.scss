@@ -19,6 +19,14 @@
       max-width: 100%;
     }
   }
+
+  &__highlight--green {
+    color: $color-alert-green;
+  }
+
+  &__highlight--red {
+    color: $color-alert-orange;
+  }
 }
 
 .card-stack[aria-expanded='false'] {

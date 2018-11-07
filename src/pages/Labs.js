@@ -13,7 +13,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-lg"
             title = { "Hodge Hall 1047" }
             details = {
-              <div><span className="rvt-alert--success">7 seats available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">7 seats available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -23,7 +23,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "Hodge Hall 4055" }
             details = {
-              <div><span className="rvt-alert--danger">Full</span></div>
+              <div><span className="card__highlight--red rvt-text-bold">Full</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -33,7 +33,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "Hodge Hall 4057" }
             details = {
-              <div><span className="rvt-alert--danger">Class in progress</span></div>
+              <div><span className="card__highlight--red rvt-text-bold">Class in progress</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -45,7 +45,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-lg"
             title = { "Hodge Hall" }
             details = {
-              <div><span className="rvt-alert--success">11 printers available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">11 printers available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -55,7 +55,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "SPEA" }
             details = {
-              <div><span className="rvt-alert--success">11 printers available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">11 printers available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
