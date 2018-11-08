@@ -1,0 +1,40 @@
+.parking-sign {
+  background: black;
+  color: white;
+  max-width: 100px;
+  height: 138px;
+  margin-top: 1em;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: relative;
+  box-shadow: 0 0 0 0.125rem #000, 0 0 0 0.25rem #000, 0 0 0 0.4rem #000;
+
+  &__permit {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: .125em;
+  }
+
+  &__allowed, &__schedule {
+    line-height: 1;
+  }
+
+  &__consequence {
+    position: absolute;
+    bottom: .75em;
+  }
+
+  &--no-parking {
+    background: white;
+    color: #DF3603;
+    text-align: center;
+    box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.25rem #ff0202, 0 0 0 0.5rem #fff;
+    .parking-sign__permit {
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: normal;
+      margin: .5em 0 1em 0;
+      text-transform: uppercase;
+    }
+  }
+}
