@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { IconTrident } from '../icons';
-
 export class AppHeader extends Component {
   render() {
     return <div className="rvt-m-header">
