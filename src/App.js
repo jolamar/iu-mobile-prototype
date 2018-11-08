@@ -14,8 +14,8 @@ import { Bus, Labs } from './pages'
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { Locations } from './pages/Locations';
 
-const subpages = ['/bus', '/labs', "/locations"]
-const subpageTitles = ['Bus', 'Labs', 'Locations']
+const subpages = ['/bus', '/labs', '/locations', '/card', '/parking', '/food']
+const subpageTitles = ['Bus', 'Labs', 'Locations', 'Crimson Card', 'Parking', 'Food']
 
 
 class App extends Component {

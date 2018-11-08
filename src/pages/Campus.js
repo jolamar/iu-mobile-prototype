@@ -22,16 +22,22 @@ export class Campus extends Component {
 
         <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
-            <Card details={ "Crimson Card" }/>
+            <a href="/card">
+              <Card details={ "Crimson Card" }/>
+            </a>
           </div>
           <div className="rvt-grid__item">
-            <Card details={ "Find Food" }/>
+            <a href="/food">
+              <Card details={ "Find Food" }/>
+            </a>
           </div>
         </div>
 
         <div className="rvt-grid rvt-m-bottom-md">
           <div className="rvt-grid__item">
-            <Card details={ "Parking" }/>
+            <a href="/parking">
+              <Card details={ "Parking" }/>
+            </a>
           </div>
           <div className="rvt-grid__item">
             <a href="/labs">
