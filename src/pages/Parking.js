@@ -8,6 +8,14 @@ export class Parking extends Component {
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
+      <div className="card parking-permit">
+        <div className="parking-permit__campus">IU Bloomington</div>
+        <div className="parking-permit__type">CH6</div>
+        <div className="parking-permit__expiration">Expires 12/31/2018</div>
+        <div className="parking-permit__id">BL12345689</div>
+      </div>
+
+
       <h2 className="rvt-ts-23 rvt-m-top-lg">Permitted parking spaces</h2>
 
       <div className="rvt-grid">
@@ -34,7 +42,7 @@ export class Parking extends Component {
         <div className="rvt-grid__item-8">
           <Card className="rvt-m-top-lg"
                 title = { "White Lot" }
-                details = "Permitted until 11:59 PM"
+                details = "Permitted until 11:59PM"
                 links = {[
                   { title: 'Getting there', url: '#' },
                 ]}
@@ -53,7 +61,7 @@ export class Parking extends Component {
         <div className="rvt-grid__item-8">
           <Card className="rvt-m-top-lg"
                 title = { "Fee Lane Garage" }
-                details = "Permitted until 7:00 AM"
+                details = "Permitted until 7:00AM"
                 links = {[
                   { title: 'Getting there', url: '#' },
                 ]}

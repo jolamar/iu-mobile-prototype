@@ -38,3 +38,40 @@
     }
   }
 }
+
+.parking-permit {
+  position: relative;
+
+  &__campus {
+    background: #990000;
+    margin-top: .5em;
+    color: white;
+    width: 45%;
+    padding-left: 1em;
+    background: linear-gradient(-405deg,transparent 7px,#900 7px);
+  }
+
+  &__type {
+    text-align: center;
+    color: #990000;
+    font-weight: bold;
+    font-size: 29px;
+    margin-top: .5em;
+  }
+
+  &__expiration {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__id {
+    background: #333333;
+    color: #ffffff;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 12px;
+    padding: .25em 0;
+  }
+}
