@@ -25,7 +25,6 @@ export class Locations extends Component {
   render() {
 
     const buildings = this.state.buildings
-    console.log(buildings)
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
     
