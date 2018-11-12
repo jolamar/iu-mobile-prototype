@@ -8,23 +8,13 @@ import { AppHeader, Avatar, Toolbar, SubHeader } from './components';
 import Tabs from './components/Tabs'
 
 // Sub pages
-<<<<<<< HEAD
-import { Bus, Labs, Food } from './pages'
-=======
-import {Bus, CrimsonCard, Labs, Locations, Parking} from './pages'
->>>>>>> bce19da7f1b5b5711142097990a37a3ce81503bd
+import {Bus, CrimsonCard, Food, Labs, Locations, Parking} from './pages'
 
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-<<<<<<< HEAD
-const subpages = ['/bus', '/labs', "/locations", "/food"]
-const subpageTitles = ['Bus', 'Labs', 'Locations', 'Food']
-=======
 const subpages = ['/bus', '/labs', '/locations', '/card', '/parking', '/food']
 const subpageTitles = ['Bus', 'Labs', 'Locations', 'Crimson Card', 'Parking', 'Food']
->>>>>>> bce19da7f1b5b5711142097990a37a3ce81503bd
-
 
 class App extends Component {
 
