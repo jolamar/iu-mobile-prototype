@@ -1,19 +1,57 @@
 import React, { Component } from 'react';
-
 import { Card } from "../components";
+import axios from 'axios'
 
 export class Labs extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      labs: []
+    }
+  }
+
+  componentDidMount() {
+    const customerKey = process.env['REACT_APP_LABSTATS_CUSTOMER_ID'];
+    const vm = this;
+    axios(process.env['REACT_APP_LABSTATS_API_URL'], { headers: {"Authorization": customerKey} })
+      .then((res) => {
+        // [0] is IUB with 53 labs
+        vm.setState({ labs: res.data[0].ChildrenGroups })
+      })
+  }
 
   render() {
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
-    
+
+
+      <h2 className="rvt-ts-23 rvt-text-bold">Bloomington computer labs</h2>
+
+      {this.state.labs.map((building, index) =>
+        <React.Fragment>
+
+          <h3 className={`rvt-ts-20 rvt-text-bold ${index > 0 ? 'rvt-m-top-xxl' : 'rvt-m-top-md'}`}>{ building.GroupName }</h3>
+          { building.ChildrenGroups.map(lab =>
+            <Card className="rvt-m-top-lg"
+               title = { lab.GroupName }
+               details = {
+                 <div><span className={`card__highlight--${lab.Available === 0 ? 'red' : 'green'} rvt-text-bold`}>{lab.Available} seats available</span></div>
+               }
+               links = {[
+                 { title: 'Details', url: '#' },
+               ]}
+          />) }
+        </React.Fragment>
+        )}
+
+
      <h2 className="rvt-ts-23 rvt-text-bold">Nearest labs</h2>
 
       <Card className="rvt-m-top-lg"
             title = { "Hodge Hall 1047" }
             details = {
-              <div><span className="rvt-alert--success">7 seats available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">7 seats available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -23,7 +61,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "Hodge Hall 4055" }
             details = {
-              <div><span className="rvt-alert--danger">Full</span></div>
+              <div><span className="card__highlight--red rvt-text-bold">Full</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -33,7 +71,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "Hodge Hall 4057" }
             details = {
-              <div><span className="rvt-alert--danger">Class in progress</span></div>
+              <div><span className="card__highlight--red rvt-text-bold">Class in progress</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -45,7 +83,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-lg"
             title = { "Hodge Hall" }
             details = {
-              <div><span className="rvt-alert--success">11 printers available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">11 printers available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
@@ -55,7 +93,7 @@ export class Labs extends Component {
       <Card className="rvt-m-top-sm"
             title = { "SPEA" }
             details = {
-              <div><span className="rvt-alert--success">11 printers available</span></div>
+              <div><span className="card__highlight--green rvt-text-bold">11 printers available</span></div>
             }
             links = {[
               { title: 'Details', url: '#' },
