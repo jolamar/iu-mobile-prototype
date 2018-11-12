@@ -4,5 +4,6 @@ export * from './Classes'
 export * from './Help'
 export * from './Home'
 export * from './Labs'
+export * from './Food'
 export * from './Settings'
 

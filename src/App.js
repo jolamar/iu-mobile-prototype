@@ -8,14 +8,14 @@ import { AppHeader, Avatar, Toolbar, SubHeader } from './components';
 import Tabs from './components/Tabs'
 
 // Sub pages
-import { Bus, Labs } from './pages'
+import { Bus, Labs, Food } from './pages'
 
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { Locations } from './pages/Locations';
 
-const subpages = ['/bus', '/labs', "/locations"]
-const subpageTitles = ['Bus', 'Labs', 'Locations']
+const subpages = ['/bus', '/labs', "/locations", "/food"]
+const subpageTitles = ['Bus', 'Labs', 'Locations', 'Food']
 
 
 class App extends Component {
@@ -58,6 +58,7 @@ class App extends Component {
         <Route path={"/bus"} component={Bus} />
         <Route path={"/labs"} component={Labs} />
         <Route path={"/locations"} component={Locations} />
+        <Route path={"/food"} component={Food} />
 
 
         {!this.state.searchOpen &&
