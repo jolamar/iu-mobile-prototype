@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Card } from "../components";
 
+import { IconBus } from "../icons";
+
 import axios from 'axios'
 
 export class Bus extends Component {
@@ -45,8 +47,10 @@ export class Bus extends Component {
 
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id} title = {
-          <div>
-            <div className="rvt-m-top-remove rvt-m-bottom-xs rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div> {findTerminal(route.stops, stops)}<br />
+          <div className="bus-info">
+            <div className="bus-info__icon">{ IconBus }</div>
+            <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
+            <div className="bus-info__stop">{findTerminal(route.stops, stops)}</div>
           </div> }
           details = {
             <div>
@@ -54,7 +58,7 @@ export class Bus extends Component {
             </div>
           }
           links = {[
-            { title: 'Details', url: '#' },
+            { title: 'Schedule', url: '#' },
             { title: 'Live View', url: '#' },
           ]}
         />

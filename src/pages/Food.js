@@ -28,7 +28,6 @@ export class Food extends Component {
     } else {
       foodLocations = []
     }
-    console.log(foodLocations)
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
     

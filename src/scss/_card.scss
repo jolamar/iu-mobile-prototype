@@ -27,6 +27,20 @@
   &__highlight--red {
     color: $color-alert-orange;
   }
+
+  &__links {
+    svg {
+      margin-right: .25em;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
 }
 
 .card-stack[aria-expanded='false'] {

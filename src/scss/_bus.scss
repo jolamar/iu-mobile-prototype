@@ -1,0 +1,17 @@
+.bus {
+  &-info {
+    display: flex;
+    align-content: center;
+    margin-bottom: .5em;
+
+    &__route {
+      margin: 0 1em;
+      line-height: 2;
+      border-radius: 5px;
+    }
+
+    &__icon svg {
+      vertical-align: middle;
+    }
+  }
+}
