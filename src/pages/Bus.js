@@ -44,8 +44,8 @@ export class Bus extends Component {
           </svg>
         </div>
         <h1 className="rvt-alert__title" id="warning-alert-title">Color the Campus 5k tomorrow. Expect delays</h1>
-        <div>
-          <svg className="rvt-grid__item--last" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <div className="rvt-grid__item--last">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
             <path fill="currentColor" d="M5.5,15a1,1,0,0,1-.77-1.64L9.2,8,4.73,2.64A1,1,0,0,1,6.27,1.36L11.13,7.2a1.25,1.25,0,0,1,0,1.61L6.27,14.64A1,1,0,0,1,5.5,15ZM9.6,8.48h0Zm0-1h0Z"/>
           </svg>
         </div>
