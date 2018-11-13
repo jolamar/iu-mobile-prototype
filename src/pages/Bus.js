@@ -19,19 +19,10 @@ export class Bus extends Component {
 
   componentDidMount() {
     let vm = this
-    axios('https://githubapi.iu.edu/api/map/routes')
+    axios('https://githubapi.iu.edu/api/map/schedule')
       .then((res) => {
-
-        vm.setState({ routes: res.data })
+        vm.setState({ routes: res.data.routes, stops: res.data.stops })
       })
-
-    setTimeout(function() {
-      axios('https://githubapi.iu.edu/api/map/stops')
-        .then((res) => {
-
-          vm.setState({ stops: res.data })
-        })
-    }, 200)
   }
 
   render() {
