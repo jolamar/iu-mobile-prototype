@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Card } from "../components";
 
 import axios from 'axios';
+import { format } from 'path';
 
 export class Food extends Component {
 
@@ -102,7 +103,10 @@ function getHours(location) {
       break;
   }
 
+  let formattedDate = d.toLocaleDateString('en-GB').replace(new RegExp('/', 'g'), '-')
+  let todayDate = new Date(formattedDate + 'T ' + closing1 +'Z')
+
+
   let time = new Date("2000-01-01T" + closing1 + 'Z')
   return time.toLocaleTimeString('en-US', { timeZone: 'UTC', hour: '2-digit', minute:'2-digit' })
-
 }
