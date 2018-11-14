@@ -82,15 +82,9 @@ function findTerminal(routeStops, allStops) {
     let currentStopID = !!allStops[i] && allStops[i].id
 
     if (firstStopID === currentStopID) {
-      console.log(allStops[i])
       found = true
-      return removeExtraChars(allStops[i].name)
+      return allStops[i].name.split("(")[0]
     }
     i++
   }
-}
-
-function removeExtraChars(name) {
-  name = name.split("(")
-  return name[0]
 }

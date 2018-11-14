@@ -17,9 +17,9 @@ export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, l
     { !!links && links.length &&
       <div className="card__links rvt-m-top-sm">
         { links.map( link =>
-          <React.Fragment>
+          <React.Fragment key={link.title + link.url}>
             { link.title === 'Live View' && IconWifi }
-            <a key={link.title + link.url} href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>
+            <a href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>
           </React.Fragment>
         )}
       </div>
