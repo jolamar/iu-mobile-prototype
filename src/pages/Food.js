@@ -51,53 +51,34 @@ export class Food extends Component {
 }
 
 function getHours(location) {
-  var d = new Date()
-  var day = d.getDay()
+  let d = new Date()
+  let day = d.getDay()
 
-  let opening1, closing1, opening2, closing2
+  let closing1
 
   switch(day) {
     case 0:
-      opening1 = location.hourssundaybegin1
       closing1 = location.hourssundayend1
-      opening2 = location.hourssundaybegin2
-      closing2 = location.hourssundayend2
       break;
     case 1:
-      opening1 = location.hoursmondaybegin1
       closing1 = location.hoursmondayend1
-      opening2 = location.hoursmondaybegin2
-      closing2 = location.hoursmondayend2
       break;
     case 2:
-      opening1 = location.hourstuesdaybegin1
       closing1 = location.hourstuesdayend1
-      opening2 = location.hourstuesdaybegin2
-      closing2 = location.hourstuesdayend2
       break;
     case 3:
-      opening1 = location.hourswednesdaybegin1
       closing1 = location.hourswednesdayend1
-      opening2 = location.hourswednesdaybegin2
-      closing2 = location.hourswednesdayend2
       break;
     case 4:
-      opening1 = location.hoursthursdaybegin1
       closing1 = location.hoursthursdayend1
-      opening2 = location.hoursthursdaybegin2
-      closing2 = location.hoursthursdayend2
       break;
     case 5:
-      opening1 = location.hoursfridaybegin1
       closing1 = location.hoursfridayend1
-      opening2 = location.hoursfridaybegin2
-      closing2 = location.hoursfridayend2
       break;
     case 6:
-      opening1 = location.hourssaturdaybegin1
       closing1 = location.hourssaturdayend1
-      opening2 = location.hourssaturdaybegin2
-      closing2 = location.hourssaturdayend2
+      break;
+    default:
       break;
   }
 

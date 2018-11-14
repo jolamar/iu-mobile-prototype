@@ -12,16 +12,56 @@ export class Bus extends Component {
     super(props)
     this.state = {
       routes: [],
-      stops: []
+      stops: [],
+      buses: []
     };
 
+    this.findTerminal = this.findTerminal.bind(this)
+    this.firstDeparture = this.firstDeparture.bind(this)
+    this.busesOnRoute = this.busesOnRoute.bind(this)
+
+  }
+
+  findTerminal(routeStops, allStops) {
+    let found = false
+    let i = 0
+    while(!found && i<=allStops.length) {
+      let firstStopID = routeStops[0]
+      let currentStopID = !!allStops[i] && allStops[i].id
+
+      if (firstStopID === currentStopID) {
+        found = true
+        return allStops[i].name.split("(")[0]
+      }
+      i++
+    }
+  }
+
+  firstDeparture(route) {
+    //const buses = this.busesOnRoute(route)
+  }
+
+  busesOnRoute(route) {
+
+    if(!route) {
+      return []
+    }
+
+    const buses = this.state.buses
+    return buses.filter(bus => {
+      return bus.route === route.id
+    })
   }
 
   componentDidMount() {
     let vm = this
     axios('https://githubapi.iu.edu/api/map/schedule')
       .then((res) => {
-        vm.setState({ routes: res.data.routes, stops: res.data.stops })
+        vm.setState({
+          routes: res.data.routes,
+          stops: res.data.stops,
+          buses: res.data.buses
+        })
       })
   }
 
@@ -56,41 +96,27 @@ export class Bus extends Component {
           <div className="bus-info">
             <div className="bus-info__icon">{ IconBus }</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
-            <div className="bus-info__stop">{findTerminal(route.stops, stops)}</div>
+            <div className="bus-info__stop">{this.findTerminal(route.stops, stops)}</div>
           </div> }
           details = {
             <div>
-              Departs in <span className="card__highlight--green rvt-text-bold">2 mins</span> & <span className="card__highlight--green rvt-text-bold">7 mins</span>
+              { this.busesOnRoute(route).length > 0 &&
+                <React.Fragment>
+                  Departs in <span className="card__highlight--green rvt-text-bold">{ this.firstDeparture(route) } mins</span>
+                  &nbsp;&amp;&nbsp;
+                  <span className="card__highlight--green rvt-text-bold">7 mins</span>
+                </React.Fragment>
+              }
+              { this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
             </div>
           }
           links = {[
             { title: 'Schedule', url: '#' },
-            { title: 'Live View', url: '#' },
+            this.busesOnRoute(route).length > 0 ? { title: 'Live View', url: '#' }: {},
           ]}
         />
       )}
 
     </div>;
   }
-}
-
-function findTerminal(routeStops, allStops) {
-  let found = false
-  let i = 0
-  while(!found && i<=allStops.length) {
-    let firstStopID = routeStops[0]
-    let currentStopID = !!allStops[i] && allStops[i].id
-
-    if (firstStopID === currentStopID) {
-      console.log(allStops[i])
-      found = true
-      return removeExtraChars(allStops[i].name)
-    }
-    i++
-  }
-}
-
-function removeExtraChars(name) {
-  name = name.split("(")
-  return name[0]
 }
