@@ -19,7 +19,7 @@ export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, l
         { links.map( link =>
           <React.Fragment key={link.title + link.url}>
             { link.title === 'Live View' && IconWifi }
-            <a href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>
+            {link.url && link.title && <a href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>}
           </React.Fragment>
         )}
       </div>
