@@ -7,6 +7,7 @@ export * from './Home'
 export * from './Labs'
 export * from './Food'
 export * from './Locations'
+export * from './LocationDetail'
 export * from './Parking'
 export * from './Settings'
 

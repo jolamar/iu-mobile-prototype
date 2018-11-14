@@ -33,9 +33,14 @@ export class Locations extends Component {
       { !!buildings && buildings.map(building =>
         <Card key={building.id + building.Name}
               title = {building.Name}
-              className="rvt-m-top-xs rvt-p-all-sm"
+              details = {
+                <div className="card__detail">{ building.Code }</div>
+              }
+              links = {[
+                { title: 'Details', url: '/locationDetail' }
+              ]}
+              className = "rvt-m-top-xs rvt-p-all-sm"
         >
-          <div className="card__detail rvt-ts-12">{ building.Code }</div>
         </Card>
       )}
 
