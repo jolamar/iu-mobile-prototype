@@ -90,6 +90,25 @@ export class BusLive extends Component {
     return this.state.stops.find(stop=>stop.id == stopId).name.split("(")[0]
   }
 
+  updateSchedule() {
+
+    let vm = this
+
+    axios('https://githubapi.iu.edu/api/map/schedule')
+      .then((res) => {
+        vm.setState({
+          routes: res.data.routes,
+          stops: res.data.stops,
+          buses: res.data.buses
+        })
+      })
+
+    // update schedule every minute
+    setTimeout(function() {
+      this.updateSchedule()
+    }.bind(this), 60000)
+  }
+
   componentDidMount() {
     let vm = this
 
@@ -122,6 +141,10 @@ export class BusLive extends Component {
             return this.getEtas(route.stops[0])
           })
         }.bind(this), 200)
+
+        setTimeout(function(){
+          this.updateSchedule()
+        }.bind(this), 60000)
       })
   }
 
@@ -134,7 +157,7 @@ export class BusLive extends Component {
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
       <ol>
         { route && route.stops.map(stopId =>
-          <li>{this.getStop(stopId)}<br />
+          <li class={this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} key={stopId}>{this.getStop(stopId)}<br />
             <span className="card__highlight--green rvt-ts-14 rvt-text-bold">{this.isBusesHeadingSoon(stopId) ? 'Arriving soon' : ''}</span>
           </li>
         )}
