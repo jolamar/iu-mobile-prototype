@@ -52,6 +52,10 @@ export class Bus extends Component {
         vm.setState({etas})
       })
 
+    // update ETAs every minute
+    setTimeout(function() {
+      this.getEtas(stop)
+    }.bind(this), 60000)
 
   }
 
@@ -137,7 +141,7 @@ export class Bus extends Component {
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id} title = {
           <div className="bus-info">
-            <div className="bus-info__icon">{ IconBus }</div>
+            <div className="bus-info__icon"><small>{ this.busesOnRoute(route).length }</small> { IconBus }</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
             <div className="bus-info__stop">{this.findTerminal(route.stops)}</div>
           </div> }
@@ -153,11 +157,15 @@ export class Bus extends Component {
                 )}
                 </React.Fragment>
               }
+
+              { new Date().getHours() > new Date("Feb 1, 1999 " + route.end_time).getHours()
+                && new Date("Feb 1, 1999 " + route.end_time).getHours() > new Date("Feb 1, 1999 " + route.start_time).getHours()
+                && "This route ends at " + route.end_time.substring(0,5) + (new Date("Feb 1, 1999 " + route.end_time).getHours() > 11 ? 'PM.' : 'AM.') }
               { this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
             </div>
           }
           links = {[
-            { title: 'Schedule', url: '#' },
+            { title: 'Schedule', url: route.schedule_url },
             this.busesOnRoute(route).length > 0 ? { title: 'Live View', url: '#' }: {},
           ]}
         />
