@@ -8,7 +8,7 @@ import { AppHeader, Avatar, Toolbar, SubHeader } from './components';
 import Tabs from './components/Tabs'
 
 // Sub pages
-import {Bus, CrimsonCard, Food, Labs, Locations, Parking} from './pages'
+import {Bus, BusLive, CrimsonCard, Food, Labs, Locations, Parking} from './pages'
 
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
@@ -35,9 +35,13 @@ class App extends Component {
     const path = window.location.pathname
     const urlIndex = subpages.indexOf(path)
 
+    const subpage = subpages.find(page => {
+      return path.includes(page)
+    })
+
     return <Router>
       <React.Fragment>
-        {urlIndex === -1 &&
+        {!subpage &&
           <React.Fragment>
             <AppHeader searchOpen={this.state.searchOpen} campus="Bloomington">
               <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
@@ -49,11 +53,12 @@ class App extends Component {
           </React.Fragment>
         }
 
-        {urlIndex !== -1 &&
+        {subpage &&
           <SubHeader title={subpageTitles[urlIndex]} />
         }
 
-        <Route path={"/bus"} component={Bus} />
+        <Route exact path={"/bus"} component={Bus} />
+        <Route path={"/bus/:id"} component={BusLive} />
         <Route path={"/card"} component={CrimsonCard} />
         <Route path={"/parking"} component={Parking} />
         <Route path={"/labs"} component={Labs} />
