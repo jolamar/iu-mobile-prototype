@@ -13,32 +13,42 @@ export class Bus extends Component {
     this.state = {
       routes: [],
       stops: [],
-      buses: []
+      buses: [],
+      etas: []
     };
 
     this.findTerminal = this.findTerminal.bind(this)
-    this.firstDeparture = this.firstDeparture.bind(this)
+    this.getEtas = this.getEtas.bind(this)
     this.busesOnRoute = this.busesOnRoute.bind(this)
 
   }
 
-  findTerminal(routeStops, allStops) {
-    let found = false
-    let i = 0
-    while(!found && i<=allStops.length) {
-      let firstStopID = routeStops[0]
-      let currentStopID = !!allStops[i] && allStops[i].id
+  findTerminal(routeStops) {
 
-      if (firstStopID === currentStopID) {
-        found = true
-        return allStops[i].name.split("(")[0]
-      }
-      i++
-    }
+    let firstStopID = routeStops[0]
+    let stops = this.state.stops
+
+    let terminal = stops.find(stop => {
+      return firstStopID === stop.id
+    })
+
+    terminal = terminal.name.split("(")[0]
+
+    return terminal
   }
 
-  firstDeparture(route) {
-    //const buses = this.busesOnRoute(route)
+  getEtas(stop) {
+    let vm = this
+    let etas = this.state.etas
+
+
+    axios('https://githubapi.iu.edu/api/map/eta?stop=' + stop)
+      .then((res) => {
+        etas = res.data.etas[stop].etas
+        vm.setState({etas})
+      })
+
+
   }
 
   busesOnRoute(route) {
@@ -62,12 +72,20 @@ export class Bus extends Component {
           stops: res.data.stops,
           buses: res.data.buses
         })
+        setTimeout(function(){
+          this.state.routes.map(route => {
+            this.getEtas(route.stops[0])
+          })
+        }.bind(this), 200)
       })
+
+
+
   }
 
   render() {
     const routes = this.state.routes
-    const stops = this.state.stops
+    const etas = this.state.etas
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
@@ -96,15 +114,18 @@ export class Bus extends Component {
           <div className="bus-info">
             <div className="bus-info__icon">{ IconBus }</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
-            <div className="bus-info__stop">{this.findTerminal(route.stops, stops)}</div>
+            <div className="bus-info__stop">{this.findTerminal(route.stops)}</div>
           </div> }
           details = {
             <div>
-              { this.busesOnRoute(route).length > 0 &&
+              { this.busesOnRoute(route).length > 0 && etas.length > 0 &&
                 <React.Fragment>
-                  Departs in <span className="card__highlight--green rvt-text-bold">{ this.firstDeparture(route) } mins</span>
-                  &nbsp;&amp;&nbsp;
-                  <span className="card__highlight--green rvt-text-bold">7 mins</span>
+                  Departs in { etas.map((eta, index) =>
+                  <React.Fragment key={eta.bus_id + index}>
+                    <span className="card__highlight--green rvt-text-bold">{eta.avg} min{eta.avg > 1 && 's'}</span>
+                    <span>{index < (etas.length - 1) && ' and '}</span>
+                  </React.Fragment>
+                )}
                 </React.Fragment>
               }
               { this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
