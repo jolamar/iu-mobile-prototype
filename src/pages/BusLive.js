@@ -81,8 +81,13 @@ export class BusLive extends Component {
     localStorage.setItem('dismissedAnnouncements', JSON.stringify(dismissedAnnouncements))
   }
 
-  getStop(id) {
-    return this.state.stops.find(stop=>stop.id == id).name.split("(")[0]
+
+  isBusesHeadingSoon(stopId) {
+    return this.state.buses.find(bus => bus.heading == stopId)
+  }
+
+  getStop(stopId) {
+    return this.state.stops.find(stop=>stop.id == stopId).name.split("(")[0]
   }
 
   componentDidMount() {
@@ -128,7 +133,11 @@ export class BusLive extends Component {
     console.log(route)
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
       <ol>
-        { route && route.stops.map(r => <li>{this.getStop(r)}</li>) }
+        { route && route.stops.map(stopId =>
+          <li>{this.getStop(stopId)}<br />
+            <span className="card__highlight--green rvt-ts-14 rvt-text-bold">{this.isBusesHeadingSoon(stopId) ? 'Arriving soon' : ''}</span>
+          </li>
+        )}
       </ol>
     </div>;
   }
