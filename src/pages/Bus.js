@@ -11,15 +11,19 @@ export class Bus extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      announcements: [],
       routes: [],
       stops: [],
       buses: [],
-      etas: []
+      etas: {
+        stops: []
+      }
     };
 
     this.findTerminal = this.findTerminal.bind(this)
     this.getEtas = this.getEtas.bind(this)
     this.busesOnRoute = this.busesOnRoute.bind(this)
+    this.dismissAlert = this.dismissAlert.bind(this)
 
   }
 
@@ -39,12 +43,12 @@ export class Bus extends Component {
 
   getEtas(stop) {
     let vm = this
-    let etas = this.state.etas
+    let etas = Object.assign({},this.state.etas)
 
 
     axios('https://githubapi.iu.edu/api/map/eta?stop=' + stop)
       .then((res) => {
-        etas = res.data.etas[stop].etas
+        etas.stops[stop] = res.data.etas[stop].etas
         vm.setState({etas})
       })
 
@@ -63,8 +67,36 @@ export class Bus extends Component {
     })
   }
 
+  dismissAlert(title) {
+    let dismissedAnnouncements = JSON.parse(localStorage.getItem('dismissedAnnouncements'))
+    if(!dismissedAnnouncements) {
+      dismissedAnnouncements = []
+    }
+    dismissedAnnouncements.push(title)
+
+    localStorage.setItem('dismissedAnnouncements', JSON.stringify(dismissedAnnouncements))
+  }
+
   componentDidMount() {
     let vm = this
+
+    // load announcements
+    axios('https://githubapi.iu.edu/api/map/announcements')
+      .then((res) => {
+        let announcements = res.data
+        let dismissedAnnouncements = JSON.parse(localStorage.getItem('dismissedAnnouncements'))
+
+        if(dismissedAnnouncements) {
+          announcements = announcements.filter(a => dismissedAnnouncements.indexOf(a.title) === -1)
+        }
+
+        vm.setState({
+          announcements
+        })
+      })
+
+    // get the bus schedule
+    // (routes, stops, buses, and etas)
     axios('https://githubapi.iu.edu/api/map/schedule')
       .then((res) => {
         vm.setState({
@@ -74,40 +106,33 @@ export class Bus extends Component {
         })
         setTimeout(function(){
           this.state.routes.map(route => {
-            this.getEtas(route.stops[0])
+            return this.getEtas(route.stops[0])
           })
         }.bind(this), 200)
       })
-
-
-
   }
 
   render() {
     const routes = this.state.routes
     const etas = this.state.etas
+    const announcements = this.state.announcements
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
 
-      <button className="rvt-m-top-md rvt-m-bottom-xl rvt-alert rvt-alert--button rvt-display-flex rvt-alert--warning rvt-m-bottom-md" role="alertdialog" aria-labelledby="warning-alert-title">
-
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <g fill="currentColor">
-              <path d="M8,16a8,8,0,1,1,8-8A8,8,0,0,1,8,16ZM8,2a6,6,0,1,0,6,6A6,6,0,0,0,8,2Z"/>
-              <path d="M8,9A1,1,0,0,1,7,8V5A1,1,0,0,1,9,5V8A1,1,0,0,1,8,9Z"/>
-              <circle cx="8" cy="11" r="1"/>
-            </g>
-          </svg>
+      { announcements.length > 0 && announcements.map( announcement =>
+        <div key={announcement.date} className="rvt-alert rvt-alert--warning rvt-m-bottom-md" role="alertdialog" aria-labelledby={`alert-${announcement.date}`}>
+          <h1 className="rvt-alert__title" id={`alert-${announcement.date}`}>{ announcement.title }</h1>
+          <p className="rvt-alert__message">{announcement.message}</p>
+          <button onClick={()=>this.dismissAlert(announcement.title)} className="rvt-alert__dismiss">
+            <span className="v-hide">Dismiss this alert</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+              <path fill="currentColor"
+                    d="M9.41,8l5.29-5.29a1,1,0,0,0-1.41-1.41L8,6.59,2.71,1.29A1,1,0,0,0,1.29,2.71L6.59,8,1.29,13.29a1,1,0,1,0,1.41,1.41L8,9.41l5.29,5.29a1,1,0,0,0,1.41-1.41Z"/>
+            </svg>
+          </button>
         </div>
-        <h1 className="rvt-alert__title" id="warning-alert-title">Color the Campus 5k tomorrow. Expect delays</h1>
-        <div className="rvt-grid__item--last">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-            <path fill="currentColor" d="M5.5,15a1,1,0,0,1-.77-1.64L9.2,8,4.73,2.64A1,1,0,0,1,6.27,1.36L11.13,7.2a1.25,1.25,0,0,1,0,1.61L6.27,14.64A1,1,0,0,1,5.5,15ZM9.6,8.48h0Zm0-1h0Z"/>
-          </svg>
-        </div>
-      </button>
+      )}
 
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id} title = {
@@ -118,12 +143,12 @@ export class Bus extends Component {
           </div> }
           details = {
             <div>
-              { this.busesOnRoute(route).length > 0 && etas.length > 0 &&
+              { this.busesOnRoute(route).length > 0 && etas.stops[route.stops[0]] && etas.stops[route.stops[0]].length > 0 &&
                 <React.Fragment>
-                  Departs in { etas.map((eta, index) =>
+                  Departs in { etas.stops[route.stops[0]].map((eta, index) =>
                   <React.Fragment key={eta.bus_id + index}>
                     <span className="card__highlight--green rvt-text-bold">{eta.avg} min{eta.avg > 1 && 's'}</span>
-                    <span>{index < (etas.length - 1) && ' and '}</span>
+                    <span>{index < (etas.stops[route.stops[0]].length - 1) && ' and '}</span>
                   </React.Fragment>
                 )}
                 </React.Fragment>
