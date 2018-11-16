@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { Card } from "../components";
-
 import { IconBus } from "../icons";
 
 import axios from 'axios'
@@ -43,8 +41,6 @@ export class BusLive extends Component {
 
   getEtas(route) {
     let vm = this
-    let etas = Object.assign({},this.state.etas)
-
 
     axios('https://githubapi.iu.edu/api/map/eta?route=' + route)
       .then((res) => {
@@ -163,16 +159,13 @@ export class BusLive extends Component {
   }
 
   render() {
-    const routes = this.state.routes
-    const etas = this.state.etas
-    const announcements = this.state.announcements
     const route = this.state.route
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
-      <ol className='rvt-plain-list'>
+      <ol className='bus-live rvt-plain-list'>
         { route.stops && route.stops.map(stopId =>
-          <li className={this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} key={stopId}>
-            {/* Bus icon */ this.getlastStop(stopId) ? <span className="rvt-m-lr-xs">{IconBus}</span> : '' }
+          <li className={`${this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} bus-live__item`} key={stopId}>
+            {/* Bus icon */ this.getlastStop(stopId) ? <span className="bus-live__icon rvt-m-lr-xs">{IconBus}</span> : '' }
 
             {/* Bus ID */ this.getlastStop(stopId) ? '(id:' + this.getlastStop(stopId).name + ') ' : '' }
 
