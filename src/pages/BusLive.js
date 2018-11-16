@@ -13,15 +13,15 @@ export class BusLive extends Component {
     this.state = {
       announcements: [],
       routes: [],
+      route: {},
       stops: [],
       buses: [],
-      etas: {
-        stops: []
-      }
+      etas: []
     };
 
     this.findTerminal = this.findTerminal.bind(this)
     this.getEtas = this.getEtas.bind(this)
+    this.getStopEta = this.getStopEta.bind(this)
     this.busesOnRoute = this.busesOnRoute.bind(this)
     this.dismissAlert = this.dismissAlert.bind(this)
 
@@ -41,22 +41,32 @@ export class BusLive extends Component {
     return terminal
   }
 
-  getEtas(stop) {
+  getEtas(route) {
     let vm = this
     let etas = Object.assign({},this.state.etas)
 
 
-    axios('https://githubapi.iu.edu/api/map/eta?stop=' + stop)
+    axios('https://githubapi.iu.edu/api/map/eta?route=' + route)
       .then((res) => {
-        etas.stops[stop] = res.data.etas[stop].etas
-        vm.setState({etas})
+        vm.setState({etas: res.data.etas})
       })
 
     // update ETAs every minute
     setTimeout(function() {
-      this.getEtas(stop)
+      this.getEtas(route)
     }.bind(this), 60000)
 
+  }
+
+  getStopEta(stopId) {
+
+    const etas = this.state.etas;
+
+    if(!etas) {
+      return
+    }
+
+    return etas[stopId] && etas[stopId].etas[0].avg
   }
 
   busesOnRoute(route) {
@@ -84,6 +94,10 @@ export class BusLive extends Component {
 
   isBusesHeadingSoon(stopId) {
     return this.state.buses.find(bus => bus.heading == stopId)
+  }
+
+  getlastStop(stopId) {
+    return this.state.buses.find(bus => bus.lastStop == stopId)
   }
 
   getStop(stopId) {
@@ -133,13 +147,13 @@ export class BusLive extends Component {
       .then((res) => {
         vm.setState({
           routes: res.data.routes,
+          route: res.data.routes.find(route=>route.id == this.props.match.params.id),
           stops: res.data.stops,
-          buses: res.data.buses
+          buses: res.data.buses.filter(bus=>bus.route == vm.props.match.params.id)
         })
+
         setTimeout(function(){
-          this.state.routes.map(route => {
-            return this.getEtas(route.stops[0])
-          })
+          this.getEtas(this.state.route.id)
         }.bind(this), 200)
 
         setTimeout(function(){
@@ -152,13 +166,19 @@ export class BusLive extends Component {
     const routes = this.state.routes
     const etas = this.state.etas
     const announcements = this.state.announcements
-    const route = routes.find(route=>route.id == this.props.match.params.id)
-    console.log(route)
+    const route = this.state.route
+
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
-      <ol>
-        { route && route.stops.map(stopId =>
-          <li class={this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} key={stopId}>{this.getStop(stopId)}<br />
-            <span className="card__highlight--green rvt-ts-14 rvt-text-bold">{this.isBusesHeadingSoon(stopId) ? 'Arriving soon' : ''}</span>
+      <ol className='rvt-plain-list'>
+        { route.stops && route.stops.map(stopId =>
+          <li className={this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} key={stopId}>
+            {/* Bus icon */ this.getlastStop(stopId) ? <span className="rvt-m-lr-xs">{IconBus}</span> : '' }
+
+            {/* Bus ID */ this.getlastStop(stopId) ? '(id:' + this.getlastStop(stopId).name + ') ' : '' }
+
+            {/* Stop name */}<strong>{this.getStop(stopId)} (id:{stopId})</strong>
+            <br />
+            {/* ETA in minutes */ this.getStopEta(stopId) ? (this.getStopEta(stopId) > 1 ? <span className="rvt-ts-14">{this.getStopEta(stopId)} mins</span> : <span className="card__highlight--green rvt-ts-14 rvt-text-bold">Arriving soon</span>) : ''}
           </li>
         )}
       </ol>
