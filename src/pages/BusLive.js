@@ -18,7 +18,8 @@ export class BusLive extends Component {
     };
 
     this.findTerminal = this.findTerminal.bind(this)
-    this.getEtas = this.getEtas.bind(this)
+    this.getStopEtas = this.getStopEtas.bind(this)
+    this.getRouteEtas = this.getRouteEtas.bind(this)
     this.getStopEta = this.getStopEta.bind(this)
     this.busesOnRoute = this.busesOnRoute.bind(this)
     this.dismissAlert = this.dismissAlert.bind(this)
@@ -39,7 +40,7 @@ export class BusLive extends Component {
     return terminal
   }
 
-  getEtas(route) {
+  getRouteEtas(route) {
     let vm = this
 
     axios('https://githubapi.iu.edu/api/map/eta?route=' + route)
@@ -49,7 +50,26 @@ export class BusLive extends Component {
 
     // update ETAs every minute
     setTimeout(function() {
-      this.getEtas(route)
+      this.getRouteEtas(route)
+    }.bind(this), 60000)
+
+  }
+
+
+  getStopEtas(stop) {
+    let vm = this
+
+    let etas = Object.assign({}, this.state.etas)
+
+    axios('https://githubapi.iu.edu/api/map/eta?stop=' + stop)
+      .then((res) => {
+        etas[stop] = res.data.etas[stop]
+        vm.setState({etas})
+      })
+
+    // update ETAs every minute
+    setTimeout(function() {
+      this.getStopEtas(stop)
     }.bind(this), 60000)
 
   }
@@ -149,7 +169,7 @@ export class BusLive extends Component {
         })
 
         setTimeout(function(){
-          this.getEtas(this.state.route.id)
+          this.getRouteEtas(this.state.route.id)
         }.bind(this), 200)
 
         setTimeout(function(){
