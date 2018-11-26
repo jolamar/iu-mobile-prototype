@@ -8,7 +8,7 @@ import { AppHeader, Avatar, Toolbar, SubHeader } from './components';
 import Tabs from './components/Tabs'
 
 // Sub pages
-import {Bus, BusLive, CrimsonCard, Food, Labs, Locations, Parking} from './pages'
+import {Bus, BusLive, CrimsonCard, Food, Labs, Locations, LocationDetail, Parking} from './pages'
 
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
