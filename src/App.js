@@ -12,6 +12,7 @@ import {Bus, BusLive, CrimsonCard, Food, Labs, Locations, Parking} from './pages
 
 // Routing
 import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BusSchedule} from "./pages/BusSchedule";
 
 const subpages = ['/bus', '/labs', '/locations', '/card', '/parking', '/food']
 const subpageTitles = ['Bus', 'Labs', 'Locations', 'Crimson Card', 'Parking', 'Food']
@@ -58,7 +59,8 @@ class App extends Component {
         }
 
         <Route exact path={"/bus"} component={Bus} />
-        <Route path={"/bus/:id"} component={BusLive} />
+        <Route exact path={"/bus/live/:id"} component={BusLive} />
+        <Route exact path={"/bus/schedule/:route"} component={BusSchedule} />
         <Route path={"/card"} component={CrimsonCard} />
         <Route path={"/parking"} component={Parking} />
         <Route path={"/labs"} component={Labs} />

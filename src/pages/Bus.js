@@ -141,7 +141,7 @@ export class Bus extends Component {
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id} title = {
           <div className="bus-info">
-            <div className="bus-info__icon"><small>{ this.busesOnRoute(route).length }</small> { IconBus }</div>
+            <div className="bus-info__icon">{/*<small>{ this.busesOnRoute(route).length }</small>*/} { IconBus }</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
             <div className="bus-info__stop">{this.findTerminal(route.stops)}</div>
           </div> }
@@ -165,8 +165,8 @@ export class Bus extends Component {
             </div>
           }
           links = {[
-            { title: 'Schedule', url: route.schedule_url },
-            this.busesOnRoute(route).length > 0 ? { title: 'Live View', url: '/bus/'+route.id }: {},
+            { title: 'Schedule', url: '/bus/schedule/'+route.short_name.replace('-','') },
+            this.busesOnRoute(route).length > 0 ? { title: 'Live View', url: '/bus/live/'+route.id }: {},
           ]}
         />
       )}
