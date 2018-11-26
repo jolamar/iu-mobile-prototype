@@ -12,7 +12,33 @@ export class Bus extends Component {
     super(props)
     this.state = {
       announcements: [],
-      routes: [],
+      routes: [
+        {
+          "name": "A Route",
+          "short_name": "A",
+          "color": "BD0000"
+        },
+        {
+          "name": "B Route",
+          "short_name": "B",
+          "color": "009933"
+        },
+        {
+          "name": "E Route",
+          "short_name": "E",
+          "color": "8C259C"
+        },
+        {
+          "name": "W Route",
+          "short_name": "W",
+          "color": "006298"
+        },
+        {
+          "name": "W Limited",
+          "short_name": "W-L",
+          "color": "F5BB17"
+        },
+      ],
       stops: [],
       buses: [],
       etas: {
@@ -29,6 +55,9 @@ export class Bus extends Component {
 
   findTerminal(routeStops) {
 
+    if(!routeStops) {
+      return
+    }
     let firstStopID = routeStops[0]
     let stops = this.state.stops
 
@@ -169,7 +198,7 @@ export class Bus extends Component {
               { new Date().getHours() > new Date("Feb 1, 1999 " + route.end_time).getHours()
                 && new Date("Feb 1, 1999 " + route.end_time).getHours() > new Date("Feb 1, 1999 " + route.start_time).getHours()
                 && "This route ends at " + route.end_time.substring(0,5) + (new Date("Feb 1, 1999 " + route.end_time).getHours() > 11 ? 'PM.' : 'AM.') }
-              { this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
+              { etas.stops.length > 0 && this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
             </div>
           }
           links = {[
