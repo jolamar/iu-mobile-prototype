@@ -1,4 +1,5 @@
 export * from './Bus'
+export * from './BusLive'
 export * from './Campus'
 export * from './Classes'
 export * from './CrimsonCard'
