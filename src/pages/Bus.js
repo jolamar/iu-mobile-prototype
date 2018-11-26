@@ -178,12 +178,13 @@ export class Bus extends Component {
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id} title = {
           <div className="bus-info">
-            <div className="bus-info__icon">{/*<small>{ this.busesOnRoute(route).length }</small>*/} {!route.id && <div className="rvt-loader rvt-loader--xxs" aria-label="Content loading"></div>} { route.id && IconBus }</div>
+            <div className="bus-info__icon">{/*<small>{ this.busesOnRoute(route).length }</small>*/} {!route.id && <div className="rvt-loader rvt-loader--xxs" aria-label="Content loading"></div>}{route.id && IconBus }</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
             <div className="bus-info__stop">{this.findTerminal(route.stops)}</div>
           </div> }
           details = {
             <div>
+              { this.busesOnRoute(route).length > 0 && etas.stops.length === 0 && <div className="rvt-loader rvt-loader--xxs" aria-label="Content loading"></div>}
               { this.busesOnRoute(route).length > 0 && etas.stops[route.stops[0]] && etas.stops[route.stops[0]].length > 0 &&
                 <React.Fragment>
                   Departs in { etas.stops[route.stops[0]].map((eta, index) =>
@@ -194,11 +195,7 @@ export class Bus extends Component {
                 )}
                 </React.Fragment>
               }
-
-              { new Date().getHours() > new Date("Feb 1, 1999 " + route.end_time).getHours()
-                && new Date("Feb 1, 1999 " + route.end_time).getHours() > new Date("Feb 1, 1999 " + route.start_time).getHours()
-                && "This route ends at " + route.end_time.substring(0,5) + (new Date("Feb 1, 1999 " + route.end_time).getHours() > 11 ? 'PM.' : 'AM.') }
-              { etas.stops.length > 0 && this.busesOnRoute(route).length === 0 && "Buses are currently not running." }
+              { etas.stops.length > 0 && this.busesOnRoute(route).length === 0 && "The last bus has departed." }
             </div>
           }
           links = {[
