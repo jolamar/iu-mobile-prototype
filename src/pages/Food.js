@@ -41,6 +41,9 @@ export class Food extends Component {
             Open until {getHours(foodLocation)}
           </div>
         }
+        links = {[
+          { title: 'Details', url: '/locationDetail' }
+        ]}  
       >
       </Card>
      
