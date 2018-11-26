@@ -182,6 +182,8 @@ export class BusLive extends Component {
     const route = this.state.route
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
+
+      {!route.stops && <div className="rvt-display-flex"><div className="rvt-loader rvt-m-tb-lg rvt-container--center rvt-loader--xxl" aria-label="Content loading"></div></div>}
       <ol className='bus-live rvt-plain-list'>
         { route.stops && route.stops.map(stopId =>
           <li className={`${this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} bus-live__item`} key={stopId}>
