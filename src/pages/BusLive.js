@@ -193,7 +193,7 @@ export class BusLive extends Component {
 
             {/* Stop name */}<strong>{this.getStop(stopId)}{/*  (id:{stopId})*/}</strong>
             <br />
-            {/* ETA in minutes */ this.getStopEta(stopId) ? (this.getStopEta(stopId) > 1 ? <span className="rvt-ts-14">{this.getStopEta(stopId)} mins</span> : <span className="card__highlight--green rvt-ts-14 rvt-text-bold">Arriving soon</span>) : ''}
+            {/* ETA in minutes */ this.getStopEta(stopId) ? (this.getStopEta(stopId) > 0 ? <span className="rvt-ts-14">{this.getStopEta(stopId)} mins</span> : <span className="card__highlight--green rvt-ts-14 rvt-text-bold">Arriving</span>) : ''}
           </li>
         )}
       </ol>
