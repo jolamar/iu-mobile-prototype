@@ -114,12 +114,20 @@ export class Bus extends Component {
           })
         }.bind(this), 200)
       })
+
   }
 
   render() {
     const routes = this.state.routes
     const etas = this.state.etas
     const announcements = this.state.announcements
+
+    const day = new Date().getDay()
+    const friday = day === 5
+    const saturday = day === 6
+    const sunday = day === 7
+    const weekend = saturday || sunday
+    const weekday = !friday && !weekend
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
@@ -171,6 +179,19 @@ export class Bus extends Component {
         />
       )}
 
+      {weekday && <Card className="rvt-m-top-sm" key={'night-owl'} title = {
+          <div className="bus-info">
+            <div className="bus-info__icon">{ IconBus }</div>
+            <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#333333`}}>Night Owl</div>
+            <div className="bus-info__stop">Stadium</div>
+          </div> }
+         details = {
+           <div>Buses do not run today.</div>
+         }
+         links = {[
+           { title: 'Schedule', url: '/bus/schedule/NO' }
+         ]}
+      />}
     </div>;
   }
 }
