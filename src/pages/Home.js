@@ -43,7 +43,7 @@ export class Home extends Component {
       { morning &&
       <React.Fragment>
 
-        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
+        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md rvt-headlines">You have 2 classes today.</p>
         <Stack>
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
@@ -74,7 +74,7 @@ export class Home extends Component {
           />
         </Stack>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Grab breakfast</h2>
         <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
@@ -99,7 +99,7 @@ export class Home extends Component {
           />
         </Stack>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Getting to class</h2>
         <Card title      = { "Going to Kelley School" }
               details    = {
                 <div>
@@ -121,7 +121,7 @@ export class Home extends Component {
 
       { afternoon &&
       <React.Fragment>
-        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have just 1 more class today.</p>
+        <p className="rvt-ts-16 rvt-m-top-remove rvt-m-bottom-md rvt-headlines">You have just 1 more class today.</p>
         <Card title      = { "BUS-X 400" }
               subtitle   = { "International Business Law" }
               details    = { "5:30 PM - 6:45 PM" }
@@ -133,7 +133,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-headlines">Grab lunch</h2>
         <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
@@ -157,7 +157,7 @@ export class Home extends Component {
                 ]}
           />
         </Stack>
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Getting to class</h2>
         <Card title      = { "Going to Kelley School" }
               details    = {
                 <div>
@@ -179,7 +179,7 @@ export class Home extends Component {
 
       { evening &&
       <React.Fragment>
-        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">Looking for things to do?</p>
+        <p className="rvt-ts-16 rvt-m-bottom-md rvt-headlines">Looking for things to do?</p>
         <button className="rvt-button rvt-button--plain">View all events</button>
 
         <Card banner     = { "./img/stadium.jpg" }
@@ -194,7 +194,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Grab dinner</h2>
         <Stack>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
@@ -219,7 +219,7 @@ export class Home extends Component {
           />
         </Stack>
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Getting home</h2>
         <Card title      = { "Going to Stadium" }
               details    = {
                 <div>
@@ -230,7 +230,7 @@ export class Home extends Component {
         />
 
 
-        <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Tomorrow's classes</h2>
+        <h2 className="rvt-ts-16 rvt-m-top-xl rvt-m-bottom-md rvt-headlines">Tomorrow's classes</h2>
 
         <Card title      = { "INFO-I 222" }
               subtitle   = { "The Information Society" }

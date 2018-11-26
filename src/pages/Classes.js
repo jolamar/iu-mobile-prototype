@@ -28,8 +28,33 @@ export class Classes extends Component {
 
   render() {
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" >
-      <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
-
+      
+      <h2 className="rvt-ts-16 rvt-text-regular rvt-headlines">Assignments due today</h2>
+      <Stack>
+        <Card title      = { "Ch 9 HW" }
+              details    = { "STAT-S 301" }
+              subdetails = { "Today at 11:59 PM" }
+              links      = {[
+                { title: 'Details',   url: '#' }
+              ]}
+        />
+        <Card title      = { "Ch 9 HW" }
+              details    = { "STAT-S 301" }
+              subdetails = { "Today at 11:59 PM" }
+              links      = {[
+                { title: 'Details',   url: '#' }
+              ]}
+        />
+        <Card title      = { "Ch 9 HW" }
+              details    = { "STAT-S 301" }
+              subdetails = { "Today at 11:59 PM" }
+              links      = {[
+                { title: 'Details',   url: '#' }
+              ]}
+        />
+      </Stack>
+      
+      <h2 className="rvt-ts-16 rvt-text-regular rvt-headlines rvt-m-top-lg">Course list</h2>
       <Stack>
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
@@ -59,62 +84,6 @@ export class Classes extends Component {
               ]}
         />
       </Stack>
-
-      <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Assignments due today</h2>
-      <Stack>
-        <Card title      = { "Ch 9 HW" }
-              details    = { "STAT-S 301" }
-              subdetails = { "Today at 11:59 PM" }
-              links      = {[
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-        <Card title      = { "Ch 9 HW" }
-              details    = { "STAT-S 301" }
-              subdetails = { "Today at 11:59 PM" }
-              links      = {[
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-        <Card title      = { "Ch 9 HW" }
-              details    = { "STAT-S 301" }
-              subdetails = { "Today at 11:59 PM" }
-              links      = {[
-                { title: 'Details',   url: '#' }
-              ]}
-        />
-      </Stack>
-
-
-
-
-
-      <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Other assignments</h2>
-      <Stack>
-        <Card title      = { "Q&A 6" }
-              details    = { "ECON-E 202" }
-              subdetails = { "Tomorrow at 11:59 PM" }
-              links      = {[
-                { title: 'Details', url: '#' }
-              ]}
-        />
-        <Card title      = { "Q&A 6" }
-              details    = { "ECON-E 202" }
-              subdetails = { "Tomorrow at 11:59 PM" }
-              links      = {[
-                { title: 'Details', url: '#' }
-              ]}
-        />
-        <Card title      = { "Q&A 6" }
-              details    = { "ECON-E 202" }
-              subdetails = { "Tomorrow at 11:59 PM" }
-              links      = {[
-                { title: 'Details', url: '#' }
-              ]}
-        />
-      </Stack>
-
-
 
     </div>;
   }
