@@ -30,6 +30,19 @@
 
   &__highlight--gray {
     color: $color-black--700;
+    
+  &__links {
+    svg {
+      margin-right: .25em;
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
   }
 }
 

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { IconWifi } from "../icons";
+
 export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, links, children, className}) => (
   <div className={`rvt-panel rvt-panel--light card ${className || ''}`}>
     { banner && <div className="rvt-text-bold card__banner"><img alt={ bannerAlt || title } src={ banner } /></div> }
@@ -15,7 +17,10 @@ export const Card = ({banner, bannerAlt, title, subtitle, details, subdetails, l
     { !!links && links.length &&
       <div className="card__links rvt-m-top-sm">
         { links.map( link =>
-          <a key={link.title + link.url} href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>
+          <React.Fragment key={link.title + link.url}>
+            { link.title === 'Live View' && IconWifi }
+            { link.url && link.title && <a href={link.url} className="rvt-text-bold rvt-ts-14 rvt-m-right-sm card__link">{ link.title }</a>}
+          </React.Fragment>
         )}
       </div>
     }

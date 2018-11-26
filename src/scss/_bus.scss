@@ -1,0 +1,43 @@
+.bus {
+  &-info {
+    display: flex;
+    align-content: center;
+    margin-bottom: .5em;
+
+    &__route {
+      margin: 0 1em;
+      line-height: 2;
+      border-radius: 5px;
+    }
+
+    &__icon svg {
+      vertical-align: middle;
+    }
+  }
+
+  &-live {
+    border-left: 1em solid #BD0000;
+    padding-left: 1em;
+
+    &__item {
+      position: relative;
+      margin: 3em 0;
+    }
+
+    &__icon {
+      position: absolute;
+      left: -2.5em;
+      color: #006298;
+
+      svg {
+        border-radius: 22px;
+        padding: 3px;
+        border: 1px solid #006298;
+        height: 22px;
+        width: 22px;
+        background: white;
+        margin-left: -3px;
+      }
+    }
+  }
+}
