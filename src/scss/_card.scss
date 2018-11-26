@@ -27,6 +27,10 @@
   &__highlight--red {
     color: $color-alert-orange;
   }
+
+  &__highlight--gray {
+    color: $color-black--700;
+  }
 }
 
 .card-stack[aria-expanded='false'] {
