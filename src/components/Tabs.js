@@ -125,9 +125,11 @@ class Tabs extends Component {
   }
 
   setCurrentPage(oldIndex, newIndex) {
-    this.panel.scrollTo(0, 0)
     this.setState({currentPage: newIndex})
     this.props.history.push(pages[newIndex])
+    setTimeout(function() {
+      document.getElementById("scrollContainer").scrollTo(0, 0)
+    }, 100)
   }
 
   goToPage(index) {
@@ -174,7 +176,7 @@ class Tabs extends Component {
             </button>
           }
 
-          <div ref={(ref) => this.panel = ref} className="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+          <div id="scrollContainer" className="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
             {!this.props.searchOpen &&
               <Slider ref={slider => (this.slider = slider)} beforeChange={this.setCurrentPage} {...settings}>
                 <Home />
