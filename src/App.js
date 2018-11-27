@@ -33,6 +33,9 @@ class App extends Component {
     this.setState({searchOpen: !this.state.searchOpen})
   }
 
+  componentDidMount() {
+  }
+
   render() {
     const path = window.location.pathname
     const urlIndex = subpages.indexOf(path)
@@ -48,9 +51,13 @@ class App extends Component {
 
             <Route
               path="/"
-              render={props => <AppHeader {...props} home={props.history.location.pathname === '/'} searchOpen={this.state.searchOpen} campus="Bloomington">
+              render={props =>
+
+                <AppHeader {...props} home={props.history.location.pathname === '/'} searchOpen={this.state.searchOpen} campus="Bloomington">
                 <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
-              </AppHeader>}
+              </AppHeader>
+
+              }
             />
 
 

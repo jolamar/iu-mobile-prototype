@@ -377,6 +377,25 @@ html {
   border: 0px;
 }
 
+.rvt-input-group__input:not(:last-child) {
+  border-radius: 22px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.rvt-input-group__append {
+  .rvt-button {
+    background-color: white;
+    border: 1px solid #666666;
+    color: #666666;
+    border-radius: 22px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+  }
+}
+
+
+
 /**
  * Loading state - used in tandem with the Rivet loading indicator
  * found in components/24-loading-indicator/
