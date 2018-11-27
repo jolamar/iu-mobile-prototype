@@ -11,7 +11,7 @@ import { Campus, Classes, Help, Home, Settings } from '../pages'
 import { Link, withRouter } from "react-router-dom";
 import {IconChat, IconClose, IconTrident} from "../icons";
 
-const pages = ['/', '/classes', '/campus', '/help', '/settings']
+const pages = ['/', '/classes', '/campus', '/help']
 
 class Tabs extends Component {
 
@@ -163,7 +163,6 @@ class Tabs extends Component {
               <Link onClick={()=>this.goToPage(1)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 1} to="/classes">Classes</Link>
               <Link onClick={()=>this.goToPage(2)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 2} to="/campus">Campus</Link>
               <Link onClick={()=>this.goToPage(3)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 3} to="/help">Help</Link>
-              <Link onClick={()=>this.goToPage(4)} className="rvt-m-tabs__tab" role="tab" aria-selected={currentPage === 4} to="/settings">Settings</Link>
             </div>
           }
           {searchOpen &&
@@ -183,7 +182,6 @@ class Tabs extends Component {
                 <Classes />
                 <Campus />
                 <Help />
-                <Settings />
               </Slider>
             }
             {searchOpen &&
