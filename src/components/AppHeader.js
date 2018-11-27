@@ -17,7 +17,7 @@ export class AppHeader extends Component {
         </div>
         {this.props.children}
       </div>
-      {this.props.home && <div className="rvt-p-lr-lg rvt-p-bottom-lg rvt-background--white rvt-m-header__search">
+      <div className="rvt-p-lr-lg rvt-p-bottom-lg rvt-background--white rvt-m-header__search">
         <div className="rvt-input-group">
           <input className="rvt-input-group__input" type="text" id="search" />
           <div className="rvt-input-group__append">
@@ -25,7 +25,6 @@ export class AppHeader extends Component {
           </div>
         </div>
       </div>
-      }
     </React.Fragment>
   }
 }
