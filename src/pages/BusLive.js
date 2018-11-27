@@ -183,24 +183,26 @@ export class BusLive extends Component {
 
 
     return <React.Fragment>
-      <iframe className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} />
-      <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
+      <div className="rvt-scroll">
+        <iframe className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} />
+        <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
-        {!route.stops && <div className="rvt-display-flex"><div className="rvt-loader rvt-m-tb-lg rvt-container--center rvt-loader--xxl" aria-label="Content loading"></div></div>}
+          {!route.stops && <div className="rvt-display-flex"><div className="rvt-loader rvt-m-tb-lg rvt-container--center rvt-loader--xxl" aria-label="Content loading"></div></div>}
 
-        <ol className='bus-live rvt-plain-list'>
-          { route.stops && route.stops.map(stopId =>
-            <li className={`${this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} bus-live__item`} key={stopId}>
-              {/* Bus icon */ this.getlastStop(stopId) ? <span className="bus-live__icon rvt-m-lr-xs">{IconBus}</span> : '' }
+          <ol className='bus-live rvt-plain-list'>
+            { route.stops && route.stops.map(stopId =>
+              <li className={`${this.isBusesHeadingSoon(stopId) ? 'rvt-text-bold' : ''} bus-live__item`} key={stopId}>
+                {/* Bus icon */ this.getlastStop(stopId) ? <span className="bus-live__icon rvt-m-lr-xs">{IconBus}</span> : '' }
 
-              {/* Bus ID  this.getlastStop(stopId) ? '(id:' + this.getlastStop(stopId).name + ') ' : '' */}
+                {/* Bus ID  this.getlastStop(stopId) ? '(id:' + this.getlastStop(stopId).name + ') ' : '' */}
 
-              {/* Stop name */}<strong>{this.getStop(stopId)}{/*  (id:{stopId})*/}</strong>
-              <br />
-              {/* ETA in minutes */ this.getStopEta(stopId) ? (this.getStopEta(stopId) > 0 ? <span className="rvt-ts-14">{this.getStopEta(stopId)} mins</span> : <span className="card__highlight--green rvt-ts-14 rvt-text-bold">Arriving</span>) : ''}
-            </li>
-          )}
-        </ol>
+                {/* Stop name */}<strong>{this.getStop(stopId)}{/*  (id:{stopId})*/}</strong>
+                <br />
+                {/* ETA in minutes */ this.getStopEta(stopId) ? (this.getStopEta(stopId) > 0 ? <span className="rvt-ts-14">{this.getStopEta(stopId)} mins</span> : <span className="card__highlight--green rvt-ts-14 rvt-text-bold">Arriving</span>) : ''}
+              </li>
+            )}
+          </ol>
+        </div>
       </div>
     </React.Fragment>
     ;

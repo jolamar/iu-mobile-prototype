@@ -53,10 +53,20 @@ html {
   &__title {
     display: flex;
     align-items: center;
-
+    transition: all .2s;
     svg {
       margin-right: .75rem;
     }
+  }
+
+  &__home {
+    .rvt-m-header__title {
+      margin-left: 30%;
+    }
+  }
+
+  &__center {
+    margin-left: auto;
   }
 }
 
@@ -452,4 +462,9 @@ html {
   border: none;
   height: 300px;
   min-height: 300px;
+  width: 100%;
+}
+
+.rvt-scroll {
+  overflow: scroll;
 }

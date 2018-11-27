@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './scss/styles.scss';
 import 'rivet-uits/js/rivet.min.js';
 
-import { AppHeader, Avatar, Toolbar, SubHeader } from './components';
+import {AppHeader, Avatar, Toolbar, SubHeader} from './components';
 
 // Main nav and tab content
 import Tabs from './components/Tabs'
@@ -44,9 +44,14 @@ class App extends Component {
       <React.Fragment>
         {!subpage &&
           <React.Fragment>
-            <AppHeader searchOpen={this.state.searchOpen} campus="Bloomington">
-              <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
-            </AppHeader>
+
+            <Route
+              path="/"
+              render={props => <AppHeader {...props} home={props.history.location.pathname === '/'} searchOpen={this.state.searchOpen} campus="Bloomington">
+                <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
+              </AppHeader>}
+            />
+
 
             <Route path="/" render={() =>
               <Tabs searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch} />
