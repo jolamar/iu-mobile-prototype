@@ -80,7 +80,6 @@ html {
       transform: rotate(180deg);
     }
   }
-
   &__home {
     .rvt-m-header__title {
       margin-left: 30%;
@@ -242,7 +241,7 @@ html {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   height: 3rem;
   background-color: #333333;
   color: #ffffff;
@@ -251,6 +250,7 @@ html {
 
   &__content {
     margin-top: -3rem;
+    margin-right: 1rem;
   }
 }
 
@@ -489,4 +489,9 @@ html {
 
 .rvt-scroll {
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rvt-background--white {
+  background-color: #ffffff;
 }

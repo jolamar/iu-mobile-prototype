@@ -17,7 +17,7 @@ export class Toolbar extends Component {
     //const firstName = 'Dwight'
 
     return <div className="rvt-m-toolbar">
-      <div className="rvt-text-center rvt-m-toolbar__content">
+      <div className="rvt-m-toolbar__content">
         <button
           onClick={() => this.props.toggleSearch()}
           className="rvt-m-search-button"
