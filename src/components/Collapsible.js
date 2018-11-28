@@ -31,7 +31,6 @@ export class Collapsible extends Component {
 
         {React.Children.map(children, (child, i) => {
             const props = child.props
-          console.log(props)
             return <React.Fragment>
               <h1 className="rvt-collapsible__title">
                 <button data-collapsible={id + i} aria-expanded="false">

@@ -14,6 +14,7 @@ import {Bus, BusLive, CrimsonCard, Food, Labs, Locations, Parking, Settings} fro
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import {BusSchedule} from "./pages/BusSchedule";
+import {IconMagnifyingGlass} from "./icons";
 
 const subpages = ['/bus', '/labs', '/locations', '/card', '/parking', '/food', '/settings']
 const subpageTitles = ['Bus', 'Labs', 'Locations', 'Crimson Card', 'Parking', 'Food', 'Settings']
@@ -83,7 +84,13 @@ class App extends Component {
 
 
         {!this.state.searchOpen &&
-          <Toolbar searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch}/>
+        <button
+          onClick={() => this.toggleSearch()}
+          className="rvt-m-search-button"
+        >
+          <span className="rvt-sr-only">Search</span>
+          { IconMagnifyingGlass }
+        </button>
         }
       </React.Fragment>
     </Router>;

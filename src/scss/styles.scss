@@ -255,6 +255,7 @@ html {
 }
 
 .rvt-m-search-button {
+  position: absolute;
   background-color: #990000;
   border: 3px solid $page-background-color;
   color: #ffffff;
@@ -265,7 +266,8 @@ html {
   line-height: 1;
   border-radius: 999rem;
   box-shadow: $shadow-base;
-  // border: 2px solid #eeeeee;
+  right: 1em;
+  bottom: 1em;
 
   &:focus-visible {
     @include focus-state;
