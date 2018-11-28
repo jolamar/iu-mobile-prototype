@@ -11,10 +11,16 @@ export class Collapsible extends Component {
     this.state = {
       collapsed: true
     }
-    this.toggleStack = this.toggleStack.bind(this)
+    this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
-  toggleStack() {
+  toggleCollapse() {
+    setTimeout(function() {
+      // set the height of .slick-list to the height of .slick-current
+      let currentHeight = document.querySelector('.slick-current').scrollHeight;
+      let slickList = document.querySelector('.slick-list')
+      slickList.style.height = currentHeight + 'px'
+    }, 200)
     this.setState({collapsed: !this.state.collapsed})
   }
 
@@ -33,7 +39,7 @@ export class Collapsible extends Component {
             const props = child.props
             return <React.Fragment>
               <h1 className="rvt-collapsible__title">
-                <button data-collapsible={id + i} aria-expanded="false">
+                <button onClick={this.toggleCollapse} data-collapsible={id + i} aria-expanded="false">
                   <span className="rvt-ts-12"><strong>{props.title}</strong> <span className="rvt-m-left-sm rvt-color-gray">{props.details.replace("Open now: ", "")}</span></span>
                   <svg className="rvt-grid__item--last" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                     <path fill="currentColor"

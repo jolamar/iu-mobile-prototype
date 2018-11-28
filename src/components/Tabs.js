@@ -128,12 +128,11 @@ class Tabs extends Component {
     this.setState({currentPage: newIndex})
     this.props.history.push(pages[newIndex])
 
-
     setTimeout(function() {
       // set the height of .slick-list to the height of .slick-current
       let currentHeight = document.querySelector('.slick-current').scrollHeight;
       let slickList = document.querySelector('.slick-list')
-      slickList.style.height = currentHeight + "px"
+      slickList.style.height = currentHeight + 'px'
     }, 300)
     setTimeout(function() {
       document.getElementById("scrollContainer").scrollTo(0, 0)
