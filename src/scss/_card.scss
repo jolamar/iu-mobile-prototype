@@ -13,14 +13,30 @@
     .card {
       border: none;
       box-shadow: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      border-top: 1px solid #ddd;
+
+      .rvt-display-flex {
+        align-items: baseline;
+      }
+    }
+
+    .card:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    .card:first-child {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-top: none;
     }
 
     .rvt-collapsible {
       .card {
         border-radius: 0;
-        border-top: 1px solid #ddd;
       }
       .rvt-collapsible__content:last-child .card {
         border-bottom-left-radius: 6px;
