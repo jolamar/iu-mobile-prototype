@@ -15,29 +15,38 @@ export class Bus extends Component {
       announcements: [],
       routes: [
         {
+          "id": 646,
           "name": "A Route",
           "short_name": "A",
-          "color": "BD0000"
+          "color": "BD0000",
+          "terminal": "Stadium"
         },
         {
+          "id": 655,
           "name": "B Route",
           "short_name": "B",
-          "color": "009933"
+          "color": "009933",
+          "terminal": "Fisher Court"
         },
         {
+          "id": 661,
           "name": "E Route",
           "short_name": "E",
-          "color": "8C259C"
+          "color": "8C259C",
+          "terminal": "Evermann"
         },
         {
+          "id": 669,
           "name": "W Route",
           "short_name": "W",
-          "color": "006298"
+          "color": "006298",
+          "terminal": "Stadium"
         },
         {
           "name": "W Limited",
           "short_name": "W-L",
-          "color": "F5BB17"
+          "color": "F5BB17",
+          "terminal": "Stadium"
         },
       ],
       stops: [],
@@ -265,9 +274,9 @@ export class Bus extends Component {
       { !!routes && routes.map(route =>
         <Card className="rvt-m-top-sm" key={route.id + route.short_name} title = {
           <div className="bus-info">
-            <div className="bus-info__icon">{/*<small>{ this.busesOnRoute(route).length }</small>*/} {!route.id && <div className="rvt-loader rvt-loader--xxs" aria-label="Content loading"></div>}{route.id && IconBus }</div>
+            <div className="bus-info__icon">{/*<small>{ this.busesOnRoute(route).length }</small>*/} {IconBus}</div>
             <div className="bus-info__route rvt-badge rvt-badge--aroute" style={{backgroundColor: `#${route.color}`}}>{route.name}</div>
-            <div className="bus-info__stop">{this.findTerminal(route.stops)}</div>
+            <div className="bus-info__stop">{route.terminal || this.findTerminal(route.stops)}</div>
           </div> }
           details = {
             <div>
@@ -281,7 +290,7 @@ export class Bus extends Component {
           }
           links = {[
             { title: 'Schedule', url: '/bus/schedule/'+route.short_name.replace('-','') },
-            this.busesOnRoute(route).length > 0 ? { title: 'Live View', url: '/bus/live/'+route.id }: {},
+            route.id ? { title: 'Live View', url: '/bus/live/'+route.id }: {},
           ]}
         />
       )}
