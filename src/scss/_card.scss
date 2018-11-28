@@ -37,6 +37,10 @@
     .rvt-collapsible {
       .card {
         border-radius: 0;
+
+        .card__title:first-child {
+          display: none;
+        }
       }
       .rvt-collapsible__content:last-child .card {
         border-bottom-left-radius: 6px;
