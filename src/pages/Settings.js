@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import 'rivet-switch/dist/css/rivet-switch.min.css';
 const Switch = require('rivet-switch/dist/js/rivet-switch.min.js');
-let idx = 0;
-const uuid = () => idx++;
 
 export class Settings extends Component {
 

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Card } from "../components";
+import React, { Component } from 'react'
+import { Card } from "../components"
 import axios from 'axios'
 
 export class Labs extends Component {
@@ -25,7 +25,7 @@ export class Labs extends Component {
       building = buildings.find(building => { return 'M' === building.Code } )
     }
 
-    return building ? building.Name : code;
+    return building ? building.Name : code
   }
 
   // parse information from the printer string
@@ -47,6 +47,8 @@ export class Labs extends Component {
       let floor = room[0]
 
       calculated.push({ floor: floor,  name: printer, building: building, room: room })
+
+      return true
     })
 
     return calculated
@@ -55,7 +57,7 @@ export class Labs extends Component {
 
   getFloorCount(building, floor) {
     let printers = this.state.printers
-    let found = printers.filter(printer => printer.building === building && printer.floor == floor)
+    let found = printers.filter(printer => printer.building === building && printer.floor === floor)
     return found ? found.length : 0
   }
 
@@ -68,8 +70,8 @@ export class Labs extends Component {
   }
 
   componentDidMount() {
-    const customerKey = process.env['REACT_APP_LABSTATS_CUSTOMER_ID'];
-    const vm = this;
+    const customerKey = process.env['REACT_APP_LABSTATS_CUSTOMER_ID']
+    const vm = this
     axios(process.env['REACT_APP_LABSTATS_API_URL'], { headers: {"Authorization": customerKey} })
       .then((res) => {
         // [0] is IUB with 53 labs
@@ -192,6 +194,6 @@ export class Labs extends Component {
 
 
 
-    </div>;
+    </div>
   }
 }

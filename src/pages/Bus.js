@@ -111,8 +111,6 @@ export class Bus extends Component {
     const friday = day === 5
     const saturday = day === 6
     const sunday = day === 7
-    const weekend = saturday || sunday
-    const weekday = !friday && !saturday && !sunday
 
 
     let schedule = weekdaySchedule

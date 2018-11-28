@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import '../scss/styles.scss';
-import 'rivet-uits/js/rivet.min.js';
+import React, { Component } from 'react'
+import '../scss/styles.scss'
+import 'rivet-uits/js/rivet.min.js'
 
-import Slider from "react-slick";
+import Slider from "react-slick"
 
 // Pages
-import { Campus, Classes, Help, Home, Settings } from '../pages'
+import { Campus, Classes, Help, Home } from '../pages'
 
 // Routing
-import { Link, withRouter } from "react-router-dom";
-import {IconChat, IconClose, IconTrident} from "../icons";
+import { Link, withRouter } from "react-router-dom"
+import {IconChat, IconClose, IconTrident} from "../icons"
 
 const pages = ['/', '/classes', '/campus', '/help']
 
@@ -121,7 +121,7 @@ class Tabs extends Component {
   }
 
   handleSearchInput(e) {
-    this.setState({query: e.target.value});
+    this.setState({query: e.target.value})
   }
 
   setCurrentPage(oldIndex, newIndex) {
@@ -130,7 +130,7 @@ class Tabs extends Component {
 
     setTimeout(function() {
       // set the height of .slick-list to the height of .slick-current
-      let currentHeight = document.querySelector('.slick-current').scrollHeight;
+      let currentHeight = document.querySelector('.slick-current').scrollHeight
       let slickList = document.querySelector('.slick-list')
       slickList.style.height = currentHeight + 'px'
     }, 300)
@@ -154,7 +154,7 @@ class Tabs extends Component {
       speed: 200,
       slidesToShow: 1,
       slidesToScroll: 1
-    };
+    }
 
     const currentPage = this.state.currentPage
 
@@ -236,8 +236,8 @@ class Tabs extends Component {
           </div>
 
         </div>
-      </React.Fragment>;
+      </React.Fragment>
   }
 }
 
-export default withRouter(Tabs);
+export default withRouter(Tabs)

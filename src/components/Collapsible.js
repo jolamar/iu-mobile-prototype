@@ -29,7 +29,6 @@ export class Collapsible extends Component {
   }
 
   render() {
-    const collapsed = this.state.collapsed
     const id = 'collapsible-' + uuid()
     const children = this.props.children
     return <React.Fragment>

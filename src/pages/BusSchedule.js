@@ -658,12 +658,12 @@ export class BusSchedule extends Component {
       A: <ul className="rvt-plain-list">
         <li className="rvt-text-bold">Leaving Stadium</li>
         <li className="rvt-text-bold">MORNING SCHEDULE</li>
-          <li><span style="text-decoration: underline;"><strong>Saturday Only</strong></span></li>
+          <li><strong>Saturday Only</strong></li>
           <li>10:00 AM</li>
           <li>10:30 AM</li>
           <li>11:00 AM</li>
           <li>11:30 AM</li>
-          <li><span style="text-decoration: underline;"><strong>End Saturday Only</strong></span></li>
+          <li><strong>End Saturday Only</strong></li>
         <li className="rvt-text-bold">AFTERNOON SCHEDULE</li>
           <li>12:10 PM</li>
           <li>12:40 PM</li>
@@ -682,18 +682,18 @@ export class BusSchedule extends Component {
           <li>7:55 PM</li>
           <li>8:30 PM</li>
           <li>9:15 PM</li>
-          <li><span style="text-decoration: underline;"><strong>Sunday Only</strong></span></li>
+          <li><strong>Sunday Only</strong></li>
           <li>10:00 PM</li>
       </ul>,
       B: <ul className="rvt-plain-list">
         <li className="rvt-text-bold">Leaving Fisher Court</li>
         <li className="rvt-text-bold">MORNING SCHEDULE</li>
-          <li><span style="text-decoration: underline;"><strong>Saturday Only</strong></span></li>
+          <li><strong>Saturday Only</strong></li>
           <li>10:20 AM</li>
           <li>10:50 AM</li>
           <li>11:25 AM</li>
           <li>11:55 AM</li>
-          <li><span style="text-decoration: underline;"><strong>End Saturday Only</strong></span></li>
+          <li><strong>End Saturday Only</strong></li>
         <li className="rvt-text-bold">AFTERNOON SCHEDULE</li>
           <li>12:30 PM</li>
           <li>1:00 PM</li>
@@ -715,11 +715,11 @@ export class BusSchedule extends Component {
       E: <ul className="rvt-plain-list">
         <li className="rvt-text-bold">Leaving Jackson Creek</li>
         <li className="rvt-text-bold">MORNING SCHEDULE</li>
-          <li><span style="text-decoration: underline;"><strong>Saturday Only</strong></span></li>
+          <li><strong>Saturday Only</strong></li>
           <li>11:05 AM</li>
         <li className="rvt-text-bold">AFTERNOON SCHEDULE</li>
           <li>12:05 PM</li>
-          <li><span style="text-decoration: underline;"><strong>End Saturday Only</strong></span></li>
+          <li><strong>End Saturday Only</strong></li>
           <li>1:05 PM</li>
           <li>2:05 PM</li>
           <li>3:05 PM</li>

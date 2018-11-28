@@ -109,15 +109,16 @@ export class BusLive extends Component {
 
 
   isBusesHeadingSoon(stopId) {
-    return this.state.buses.find(bus => bus.heading == stopId)
+    return this.state.buses.find(bus => bus.heading === stopId)
   }
 
   getlastStop(stopId) {
-    return this.state.buses.find(bus => bus.lastStop == stopId)
+    return this.state.buses.find(bus => bus.lastStop === stopId)
   }
 
   getStop(stopId) {
-    return this.state.stops.find(stop=>stop.id == stopId).name.split("(")[0]
+    const stop = this.state.stops.find(stop=>stop.id === stopId)
+    return stop && stop.name.split("(")[0]
   }
 
   updateSchedule() {
@@ -163,9 +164,9 @@ export class BusLive extends Component {
       .then((res) => {
         vm.setState({
           routes: res.data.routes,
-          route: res.data.routes.find(route=>route.id == this.props.match.params.id),
+          route: res.data.routes.find(route=>route.id.toString() === this.props.match.params.id),
           stops: res.data.stops,
-          buses: res.data.buses.filter(bus=>bus.route == vm.props.match.params.id)
+          buses: res.data.buses.filter(bus=>bus.route.toString() === vm.props.match.params.id)
         })
 
         setTimeout(function(){
@@ -184,7 +185,7 @@ export class BusLive extends Component {
 
     return <React.Fragment>
       <div className="rvt-scroll">
-        <iframe className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} />
+        <iframe className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} title="Map of IU buses around campus" />
         <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
           {!route.stops && <div className="rvt-display-flex"><div className="rvt-loader rvt-m-tb-lg rvt-container--center rvt-loader--xxl" aria-label="Content loading"></div></div>}
