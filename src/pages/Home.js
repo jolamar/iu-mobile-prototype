@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Card, Stack } from "../components";
+import { Card, Collapsible } from "../components";
 
 export class Home extends Component {
 
@@ -43,8 +43,8 @@ export class Home extends Component {
       { morning &&
       <React.Fragment>
 
-        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">You have 2 classes today.</p>
-        <Stack>
+        <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">Today's classes</p>
+        <div className="cards">
           <Card title      = { "BUS-L 201" }
                 subtitle   = { "Legal Environments of Business" }
                 details    = { "5:30 PM - 6:45 PM" }
@@ -54,28 +54,30 @@ export class Home extends Component {
                   { title: 'Assignments',   url: '#' }
                 ]}
           />
-          <Card title      = { "BUS-L 201" }
-                subtitle   = { "Legal Environments of Business" }
-                details    = { "5:30 PM - 6:45 PM" }
-                subdetails = { "Hodge Hall 1000" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Assignments',   url: '#' }
-                ]}
-          />
-          <Card title      = { "BUS-L 201" }
-                subtitle   = { "Legal Environments of Business" }
-                details    = { "5:30 PM - 6:45 PM" }
-                subdetails = { "Hodge Hall 1000" }
-                links      = {[
-                  { title: 'Getting there', url: '#' },
-                  { title: 'Assignments',   url: '#' }
-                ]}
-          />
-        </Stack>
+          <Collapsible>
+            <Card title      = { "BUS-L 123" }
+                  subtitle   = { "Great Environments" }
+                  details    = { "5:30 AM - 6:45 AM" }
+                  subdetails = { "Kelley 290" }
+                  links      = {[
+                    { title: 'Getting there', url: '#' },
+                    { title: 'Assignments',   url: '#' }
+                  ]}
+            />
+            <Card title      = { "BUS-L 401" }
+                  subtitle   = { "Real Business" }
+                  details    = { "1:30 PM - 2:45 PM" }
+                  subdetails = { "Jordan 49" }
+                  links      = {[
+                    { title: 'Getting there', url: '#' },
+                    { title: 'Assignments',   url: '#' }
+                  ]}
+            />
+          </Collapsible>
+        </div>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab breakfast</h2>
-        <Stack>
+        <Collapsible>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -97,7 +99,7 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </Stack>
+        </Collapsible>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
         <Card title      = { "Going to Kelley School" }
@@ -134,7 +136,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl">Grab lunch</h2>
-        <Stack>
+        <Collapsible>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -156,7 +158,7 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </Stack>
+        </Collapsible>
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting to class</h2>
         <Card title      = { "Going to Kelley School" }
               details    = {
@@ -195,7 +197,7 @@ export class Home extends Component {
 
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Grab dinner</h2>
-        <Stack>
+        <Collapsible>
           <Card title      = { "Gresham Food Court" }
                 details    = { "Open now: 7:00 AM - 2:00 AM" }
                 links      = {[
@@ -217,7 +219,7 @@ export class Home extends Component {
                   { title: 'Details',   url: '#' }
                 ]}
           />
-        </Stack>
+        </Collapsible>
 
         <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-xl rvt-m-bottom-md">Getting home</h2>
         <Card title      = { "Going to Stadium" }
