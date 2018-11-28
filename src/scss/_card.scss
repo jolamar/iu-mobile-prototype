@@ -17,9 +17,27 @@
       border-bottom-right-radius: 0;
     }
 
+    .rvt-collapsible {
+      .card {
+        border-radius: 0;
+        border-top: 1px solid #ddd;
+      }
+      .rvt-collapsible__content:last-child .card {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+
     .rvt-collapsible__title {
-      padding: .5em .25em .5em 1em;
       border-top: 1px solid #ddd;
+
+      button {
+        padding: .5em .25em .5em 1em;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
     }
   }
 
