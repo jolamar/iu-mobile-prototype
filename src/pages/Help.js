@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 // Icons
 import { IconChat, IconPhone, IconEnvelope, IconMagnifyingGlass } from "../icons";
+import {SectionLabel} from "../components/SectionLabel";
 
 export class Help extends Component {
 
   render() {
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-4" aria-labelledby="t-four">
       <div className="rvt-m-card">
-        <div className="rvt-ts-14 rvt-m-bottom-sm">Contact us</div>
+        <SectionLabel className="rvt-m-bottom-sm">Contact us</SectionLabel>
         <div className="rvt-m-card__content rvt-m-card__content--flex rvt-p-tb-sm">
           <div className="rvt-m-action">
             <button className="rvt-m-action__icon">
@@ -42,7 +43,7 @@ export class Help extends Component {
 
       <div className="rvt-m-card">
         <div className="rvt-m-card__content">
-          <div className="rvt-ts-14 rvt-m-bottom-md">Help articles</div>
+          <SectionLabel className="rvt-ts-14 rvt-m-bottom-md">Help articles</SectionLabel>
 
           <label htmlFor="search" className="rvt-sr-only">Search</label>
           <div className="rvt-input-group">

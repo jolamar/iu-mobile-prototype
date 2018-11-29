@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'rivet-switch/dist/css/rivet-switch.min.css';
+import {SectionLabel} from "../components/SectionLabel";
 const Switch = require('rivet-switch/dist/js/rivet-switch.min.js');
 
 export class Settings extends Component {
@@ -10,7 +11,7 @@ export class Settings extends Component {
 
   render() {
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-5" aria-labelledby="t-five">
-      <p className="rvt-ts-23 rvt-m-top-remove rvt-m-bottom-md">App settings</p>
+      <SectionLabel className="rvt-m-top-remove rvt-m-bottom-md">App settings</SectionLabel>
 
       <div className="cards">
         <div className="card">

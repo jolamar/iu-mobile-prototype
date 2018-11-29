@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Card, Collapsible } from "../components";
+import {SectionLabel} from "../components/SectionLabel";
 
 export class Classes extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export class Classes extends Component {
 
   render() {
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" >
-      <h2 className="rvt-ts-23 rvt-text-bold">Course list</h2>
+      <SectionLabel>Course list</SectionLabel>
       <div className="cards">
 
         <Card title      = { "BUS-L 201" }
@@ -62,7 +63,7 @@ export class Classes extends Component {
         </Collapsible>
       </div>
 
-      <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Assignments due today</h2>
+      <SectionLabel className="rvt-m-top-lg">Assignments due today</SectionLabel>
       <div className="cards">
         <Card title      = { "Ch 9 HW" }
               details    = { "STAT-S 301" }
@@ -93,7 +94,7 @@ export class Classes extends Component {
 
 
 
-      <h2 className="rvt-ts-23 rvt-text-bold rvt-m-top-lg">Other assignments</h2>
+      <SectionLabel className="rvt-m-top-lg">Other assignments</SectionLabel>
       <div className="cards">
 
         <Card title      = { "Q&A 6" }

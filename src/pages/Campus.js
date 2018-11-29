@@ -1,50 +1,44 @@
 import React, { Component } from 'react';
 
-import { Card } from "../components";
+import { Card, SectionLabel } from "../components";
 
 export class Campus extends Component {
 
   render() {
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
-        <div className="rvt-grid rvt-m-bottom-md">
-          <div className="rvt-grid__item">
-            <a href="/bus">
-              <Card details={ "Bus Status" } />
-            </a>
-          </div>
-          <div className="rvt-grid__item">
-            <a href="/locations">
-              <Card details={ "Locations" } />
-            </a>
-          </div>
-        </div>
 
-        <div className="rvt-grid rvt-m-bottom-md">
-          <div className="rvt-grid__item">
-            <a href="/card">
-              <Card details={ "Crimson Card" }/>
-            </a>
-          </div>
-          <div className="rvt-grid__item">
-            <a href="/food">
-              <Card details={ "Find Food" } />
-            </a>
-          </div>
-        </div>
+      <SectionLabel>Getting around</SectionLabel>
+      <a href="/bus">
+        <Card details={ "Bus Status" } />
+      </a>
+      <a href="/locations">
+        <Card details={ "Buildings" } />
+      </a>
+      <a href="/parking">
+        <Card details={ "Parking" }/>
+      </a>
 
-        <div className="rvt-grid rvt-m-bottom-md">
-          <div className="rvt-grid__item">
-            <a href="/parking">
-              <Card details={ "Parking" }/>
-            </a>
-          </div>
-          <div className="rvt-grid__item">
-            <a href="/labs">
-              <Card details={ "Labs & Printers" } />
-            </a>
-          </div>
-        </div>
+      <SectionLabel className="rvt-m-top-lg">Getting stuff done</SectionLabel>
+      <a href="/labs">
+        <Card details={ "Labs" } />
+      </a>
+      <a href="/labs">
+        <Card details={ "Printers" } />
+      </a>
+      <a href="/card">
+        <Card details={ "Crimson Card" }/>
+      </a>
+
+      <SectionLabel className="rvt-m-top-lg">Things to do</SectionLabel>
+      <a href="/food">
+        <Card details={ "Find Food" } />
+      </a>
+
+      <a href="/food">
+        <Card details={ "Events" } />
+      </a>
+
     </div>;
   }
 }
