@@ -29,7 +29,7 @@ export class Classes extends Component {
 
   render() {
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-2" aria-labelledby="t-two" >
-      <SectionLabel>Course list</SectionLabel>
+      <SectionLabel className="rvt-m-top-remove">Course list</SectionLabel>
       <div className="cards">
 
         <Card title      = { "BUS-L 201" }

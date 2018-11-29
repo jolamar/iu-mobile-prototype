@@ -45,6 +45,8 @@ class App extends Component {
       return path.includes(page)
     })
 
+    console.log(this.props.location)
+
     return <Router>
       <React.Fragment>
         {!subpage &&

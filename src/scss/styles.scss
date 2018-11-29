@@ -126,8 +126,10 @@ html {
     height: 10px;
 
     .rvt-m-search-button {
-      margin-top: -1.5rem;
+      top: 5em;
       background-color: #ED174C;
+      left: auto;
+      right: auto;
     }
 
     .rvt-m-tabs__panel {
@@ -518,6 +520,5 @@ html {
 }
 
 .section-label {
-  font-weight: bold;
-  color: #717171;
+  color: #666666;
 }

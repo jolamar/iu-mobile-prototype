@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 
 import { Card, SectionLabel } from "../components";
 
+import {Link} from 'react-router-dom'
+
 export class Campus extends Component {
 
   render() {
 
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
-      <SectionLabel>Getting around</SectionLabel>
+      <SectionLabel className="rvt-m-top-remove">Getting around</SectionLabel>
       <div className="cards">
-        <a href="/bus">
+        <Link to="/bus">
           <Card details={ "Bus Status" } />
-        </a>
+        </Link>
       </div>
       <a href="/locations">
         <Card details={ "Buildings" } />
