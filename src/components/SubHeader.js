@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-
-export class SubHeader extends Component {
+import {withRouter} from "react-router-dom";
+class SubHeader extends Component {
   render() {
+    const props = this.props
     return <div className="rvt-m-header rvt-m-subheader">
-      <a href="/" className={"rvt-button rvt-button--plain"}>Back</a>
+      <button onClick={() =>props.location.pathname.includes('/bus/live') ? props.history.go(-2) : props.history.goBack()} className={"rvt-button rvt-button--plain"}>Back</button>
       <div className="rvt-m-header__title rvt-m-subheader__title">
         <span className="rvt-ts-16">
-            <span className="rvt-text-bold">{this.props.title}</span>
+            <span className="rvt-text-bold">{props.title}</span>
           </span>
       </div>
-      {this.props.children}
+      {props.children}
     </div>;
   }
 }
+
+export default withRouter(SubHeader)
+
 

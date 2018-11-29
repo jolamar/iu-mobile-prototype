@@ -191,7 +191,7 @@ export class BusLive extends Component {
 
     return <React.Fragment>
       <div className="rvt-scroll">
-        <iframe className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} title="Map of IU buses around campus" />
+        <iframe id="buslive" className="rvt-embed" src={`https://iub.doublemap.com/map/embed?name=${route.name}`} title="Map of IU buses around campus" />
         <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
           {!route.stops && <div className="rvt-display-flex"><div className="rvt-loader rvt-m-tb-lg rvt-container--center rvt-loader--xxl" aria-label="Content loading"></div></div>}

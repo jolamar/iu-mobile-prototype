@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './scss/styles.scss';
 import 'rivet-uits/js/rivet.min.js';
 
-import {AppHeader, Avatar, SubHeader} from './components';
+import {AppHeader, Avatar } from './components';
+import SubHeader from './components/SubHeader'
 
 // Main nav and tab content
 import Tabs from './components/Tabs'

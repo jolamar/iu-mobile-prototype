@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { Card, SectionLabel } from "../components";
 
-import {Link} from 'react-router-dom'
-
 export class Campus extends Component {
 
   render() {
@@ -12,9 +10,9 @@ export class Campus extends Component {
 
       <SectionLabel className="rvt-m-top-remove">Getting around</SectionLabel>
       <div className="cards">
-        <Link to="/bus">
+        <a href="/bus">
           <Card details={ "Bus Status" } />
-        </Link>
+        </a>
       </div>
       <a href="/locations">
         <Card details={ "Buildings" } />
