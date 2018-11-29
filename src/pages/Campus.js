@@ -9,9 +9,11 @@ export class Campus extends Component {
     return <div className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-3" aria-labelledby="t-three">
 
       <SectionLabel>Getting around</SectionLabel>
-      <a href="/bus">
-        <Card details={ "Bus Status" } />
-      </a>
+      <div className="cards">
+        <a href="/bus">
+          <Card details={ "Bus Status" } />
+        </a>
+      </div>
       <a href="/locations">
         <Card details={ "Buildings" } />
       </a>

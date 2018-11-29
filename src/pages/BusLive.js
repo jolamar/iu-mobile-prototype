@@ -143,20 +143,9 @@ export class BusLive extends Component {
   componentDidMount() {
     let vm = this
 
-    // load announcements
-    axios('https://githubapi.iu.edu/api/map/announcements')
-      .then((res) => {
-        let announcements = res.data
-        let dismissedAnnouncements = JSON.parse(localStorage.getItem('dismissedAnnouncements'))
 
-        if(dismissedAnnouncements) {
-          announcements = announcements.filter(a => dismissedAnnouncements.indexOf(a.title) === -1)
-        }
 
-        vm.setState({
-          announcements
-        })
-      })
+
 
     // get the bus schedule
     // (routes, stops, buses, and etas)
@@ -177,6 +166,23 @@ export class BusLive extends Component {
           this.updateSchedule()
         }.bind(this), 60000)
       })
+
+    setTimeout(function() {
+      // load announcements
+      axios('https://githubapi.iu.edu/api/map/announcements')
+        .then((res) => {
+          let announcements = res.data
+          let dismissedAnnouncements = JSON.parse(localStorage.getItem('dismissedAnnouncements'))
+
+          if(dismissedAnnouncements) {
+            announcements = announcements.filter(a => dismissedAnnouncements.indexOf(a.title) === -1)
+          }
+
+          vm.setState({
+            announcements
+          })
+        })
+    }, 1000)
   }
 
   render() {

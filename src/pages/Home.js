@@ -29,13 +29,6 @@ export class Home extends Component {
 
   render() {
 
-    // Time
-    const time = new Date();
-    const hour = time.getHours()
-    const morning = hour >= 4 && hour < 12
-    const afternoon = hour >= 12 && hour < 17
-    const evening = hour >= 17 || hour < 4
-
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
       <SectionLabel className="rvt-m-top-remove">Today's classes</SectionLabel>
