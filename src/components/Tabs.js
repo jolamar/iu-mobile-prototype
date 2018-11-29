@@ -28,7 +28,8 @@ class Tabs extends Component {
       isHorizontalSwipe: false,
       isVerticalSwipe: false,
       query: '',
-      searched: false
+      searched: false,
+      scrollTop: 0
     }
 
     this.handleTouchStart = this.handleTouchStart.bind(this)
@@ -36,6 +37,7 @@ class Tabs extends Component {
     this.handleTouchEnd = this.handleTouchEnd.bind(this)
     this.disableScrollY = this.disableScrollY.bind(this)
     this.enableScrollY = this.enableScrollY.bind(this)
+    this.handleScroll = this.handleScroll.bind(this);
     this.setCurrentPage = this.setCurrentPage.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
     this.handleSearchInput = this.handleSearchInput.bind(this)
@@ -73,6 +75,8 @@ class Tabs extends Component {
   }
 
   componentDidMount() {
+    document.getElementById('scrollContainer').addEventListener('scroll', this.handleScroll);
+
     const currentUrl = this.props.location.pathname
     if(pages.indexOf(currentUrl) !== -1) {
       this.goToPage(pages.indexOf(currentUrl))
@@ -144,6 +148,20 @@ class Tabs extends Component {
     this.slider.slickGoTo(index)
   }
 
+  handleScroll(event) {
+    const scrollTop = event.target.scrollTop
+    this.setState({ scrollTop })
+    if(scrollTop > 10) {
+      this.props.hideSearchBar()
+    } else {
+      this.props.showSearchBar()
+    }
+  };
+
+  componentWillUnmount() {
+    document.getElementById('scrollContainer').removeEventListener('scroll', this.handleScroll);
+  };
+
   render() {
 
     // Scroller settings
@@ -160,6 +178,8 @@ class Tabs extends Component {
 
     const searchOpen = this.props.searchOpen
     const searched = this.state.searched
+
+
 
     return <React.Fragment>
         <div className={`rvt-m-tabs ${searchOpen ? 'rvt-m-tabs--search' : ''}`}>
@@ -181,7 +201,6 @@ class Tabs extends Component {
               { IconClose }
             </button>
           }
-
           <div id="scrollContainer" className="rvt-m-tabs__panel" onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
             {!this.props.searchOpen &&
               <Slider ref={slider => (this.slider = slider)} beforeChange={this.setCurrentPage} {...settings}>

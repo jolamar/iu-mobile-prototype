@@ -26,16 +26,24 @@ class App extends Component {
     super(props)
 
     this.state = {
-      searchOpen: false
+      searchOpen: false,
+      searchBar: true,
     }
     this.toggleSearch = this.toggleSearch.bind(this)
+    this.hideSearchBar = this.hideSearchBar.bind(this)
+    this.showSearchBar = this.showSearchBar.bind(this)
   }
 
   toggleSearch() {
     this.setState({searchOpen: !this.state.searchOpen})
   }
 
-  componentDidMount() {
+  hideSearchBar() {
+    this.setState({searchBar: false})
+  }
+
+  showSearchBar() {
+    this.setState({searchBar: true})
   }
 
   render() {
@@ -46,27 +54,21 @@ class App extends Component {
       return path.includes(page)
     })
 
-    console.log(this.props.location)
-
     return <Router>
       <React.Fragment>
         {!subpage &&
           <React.Fragment>
-
             <Route
               path="/"
               render={props =>
-
-                <AppHeader {...props} home={props.history.location.pathname === '/'} searchOpen={this.state.searchOpen} campus="Bloomington">
-                <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
-              </AppHeader>
-
+                <AppHeader {...props} home={props.history.location.pathname === '/'} searchBar={this.state.searchBar} searchOpen={this.state.searchOpen} campus="Bloomington">
+                  <Avatar url="https://www.fillmurray.com/g/150/150" alt="Plceholder of Bill Murray"/>
+                </AppHeader>
               }
             />
 
-
             <Route path="/" render={() =>
-              <Tabs searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch} />
+              <Tabs hideSearchBar={this.hideSearchBar} showSearchBar={this.showSearchBar} searchOpen={this.state.searchOpen} toggleSearch={this.toggleSearch} />
             } />
           </React.Fragment>
         }
@@ -86,7 +88,7 @@ class App extends Component {
         <Route path={"/settings"} component={Settings} />
 
 
-        {!this.state.searchOpen &&
+        {!this.state.searchOpen && !this.state.searchBar &&
         <button
           onClick={() => this.toggleSearch()}
           className="rvt-m-search-button"
