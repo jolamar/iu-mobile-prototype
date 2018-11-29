@@ -31,7 +31,7 @@ export class Home extends Component {
 
     return <div style={{overflowY: this.state.scrollY}} className="rvt-m-tabs__panel rvt-p-bottom-xxl" tabIndex="0" role="tabpanel" id="tab-1" aria-labelledby="t-one">
 
-      <SectionLabel className="rvt-m-top-remove">Today's classes</SectionLabel>
+      <SectionLabel className="rvt-m-top-remove">Today’s classes</SectionLabel>
       <div className="cards">
         <Card title      = { "BUS-L 201" }
               subtitle   = { "Legal Environments of Business" }
