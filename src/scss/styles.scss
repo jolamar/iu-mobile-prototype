@@ -531,3 +531,23 @@ html {
   font-weight: $medium-font-weight;
   color: #666666;
 }
+
+.campus {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    background: #eee;
+    padding: 1em;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+
+  }
+  &__title {
+
+  }
+  &__description {
+    color: #717171;
+  }
+}

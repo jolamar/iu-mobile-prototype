@@ -108,7 +108,7 @@ export class Home extends Component {
       />
 
       <div className="rvt-display-flex rvt-m-top-lg">
-        <SectionLabel>Looking for things to do?</SectionLabel>
+        <SectionLabel className="rvt-m-top-xs">Events</SectionLabel>
         <button className="rvt-grid__item--last rvt-button rvt-button--plain">View all events</button>
       </div>
 
