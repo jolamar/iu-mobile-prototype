@@ -57,6 +57,10 @@
         &:focus {
           box-shadow: none;
         }
+
+        &:hover {
+          background-color: inherit;
+        }
       }
     }
   }
