@@ -1,0 +1,101 @@
+/**
+ * Loading state - used in tandem with the Rivet loading indicator
+ * found in components/24-loading-indicator/
+ */
+.rvt-button--loading,
+.rvt-button--loading[disabled] {
+  background-color: #dce3ee;
+  border-color: #b8c8dc;
+  color: #006298;
+  justify-content: center;
+  position: relative;
+}
+
+.rvt-button--loading:hover,
+.rvt-button--loading[disabled]:hover {
+  background-color: #dce3ee;
+  border-color: #b8c8dc;
+  color: #006298;
+}
+
+.rvt-button--loading .rvt-button__text,
+.rvt-button--loading[disabled] .rvt-button__text {
+  color: transparent;
+}
+
+.rvt-button--loading .rvt-loader,
+.rvt-button--loading[disabled] .rvt-loader {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /**
+         * This negative margin accounts for the width/height of the
+         * default loading indicator above.
+         */
+  margin-top: -.65rem;
+  margin-left: -0.5rem;
+}
+
+.rvt-loader {
+  animation: .8s linear infinite loader;
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: .2rem solid transparent;
+  border-top-color: #006298;
+  border-right-color: #006298;
+  border-bottom-color: #006298;
+  border-radius: 50%;
+  position: relative;
+}
+
+.rvt-loader--reverse {
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.rvt-loader--xxs {
+  width: 1rem;
+  height: 1rem;
+}
+
+.rvt-loader--xs {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.rvt-loader--sm {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.rvt-loader--md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.rvt-loader--lg {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.rvt-loader--xl {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+.rvt-loader--xxl {
+  width: 4rem;
+  height: 4rem;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -10,6 +10,11 @@
     border: 1px solid #E1E1E1;
     border-radius: 6px;
 
+
+    a {
+      text-decoration: none;
+    }
+
     .card {
       border: none;
       box-shadow: none;
@@ -31,6 +36,8 @@
     .card:first-child {
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
       border-top: none;
     }
 
@@ -176,4 +183,16 @@
       border-radius: 0;
     }
   }
+}
+
+
+
+.rvt-collapsible__title {
+  button {
+    padding: 1em !important;
+  }
+}
+
+.accordion-link {
+  padding: 1em !important;
 }

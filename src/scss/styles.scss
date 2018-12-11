@@ -1,7 +1,10 @@
-@import "~rivet-uits/sass/rivet";
+// Rivet
+@import '~rivet-uits/sass/rivet';
+
 @import 'bus';
 @import 'card';
 @import 'dots';
+@import 'loader';
 @import 'parking-sign';
 @import 'scrollable';
 
@@ -79,7 +82,7 @@ html {
     &:focus {
       outline: none;
     }
-    
+
     &:active {
       -webkit-transform: rotate(180deg);
       -moz-transform: rotate(180deg);
@@ -100,13 +103,13 @@ html {
 }
 
 .rvt-m-subheader {
-    padding-bottom: $padding-base/2;
+  padding-bottom: $padding-base/2;
 
-    &__title {
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 4em;
-    }
+  &__title {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 4em;
+  }
 }
 
 .rvt-m-avatar {
@@ -175,14 +178,10 @@ html {
     background-color: #ffffff;
   }
 
-  a {
+  &__tab {
     color: initial;
     text-decoration: none;
     text-align: center;
-  }
-
-
-  &__tab {
     flex-grow: 1;
     background: none;
     border: none;
@@ -550,4 +549,32 @@ html {
   &__description {
     color: #717171;
   }
+}
+
+.card__detail {
+  width: 100%;
+}
+.food {
+
+  width: 100%;
+  align-items: center;
+
+  &__chevron {
+    width: 15px;
+    min-width: 15px;
+    max-width:15px;
+    height: 15px;
+  }
+}
+
+.issue-label {
+  display: block;
+  padding-left: 2.4em;
+  font-size: 0.75em;
+  color: #666;
+  padding-top: .25em;
+}
+
+.building-description p:first-child {
+  display: none;
 }
